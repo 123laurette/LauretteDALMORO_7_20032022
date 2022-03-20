@@ -1,0 +1,93 @@
+@import url("carte_recette.css");
+@font-face {
+    font-family: "Lato";
+    src: url(/fonts/Lato-Regular.ttf);
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Lato", cursive;
+}
+#logo {
+    margin-left: 40%;
+    width: 15%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.barre_recherche {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 69px;
+    margin-left: 150px;
+    background: #e7e7ee;
+}
+    .barre_champ {
+        display: flex;
+        width: 1000px;
+        height: 40px;
+        border: none;
+        color: gray;
+        margin-left: 30px;
+        background: #e7e7ee;
+        font-size: 18px;
+    }
+    .barre_recherche i {
+        margin-right: 30px;
+        font-size: 18px;
+    }
+.champ_mot_cle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 107px;
+    height: 37px;
+    background-color: #3282F7;
+    border-radius: 5px;
+    margin-left: 150px;
+    margin-top: 20px;
+}
+    .mot_cle {
+        color: white;
+        font-size: 20px;
+        border: white solid;
+        width: 70px;
+        height: 20px;
+        margin-right: 5px;
+    }
+    .champ_mot_cle i {
+        color: white;
+        font-size: 20px;
+    }
+.menu_recherche {
+    display: flex;
+    width: 50%;
+    margin-left: 150px;
+}
+    .ingredients, .appareils, .ustensiles {
+        width: 20%;
+        height: 50px;
+        color: white;
+        margin-top: 20px;
+        margin-right: 20px;
+        text-align: center;
+        border-radius: 5px;
+        border: none;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    
+
+    .ingredients {
+        background: #3282F7;
+    }
+    .appareils{
+        background-color: #68d9a4;
+    }
+    .ustensiles {
+        background-color: #ed6454;
+    }
+
+

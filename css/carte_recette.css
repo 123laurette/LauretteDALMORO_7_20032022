@@ -1,0 +1,52 @@
+.cartes_recettes {
+    display: flex;
+    width: 80%;
+    height: 1400px;
+    margin-left: 150px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+    .carte_recette {
+        display: flex;
+        flex-direction: column;
+        width: 28%;
+        height: 400px;
+    }
+            .carte_recette img {
+            background-color: #c7bebe;
+            width: 100%;
+            height: 190px;
+            border-radius: 5px;
+            }
+            .titre_duree {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                margin-left: 15px;
+                margin-right: 15px;
+                font-size: 18px;
+            }
+            .detail {
+                display: flex;
+                justify-content: space-between;
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+                .detail_recette {
+                    flex-direction: column;
+                }    
+                    .detail_recette h2 {
+                    display: flex;
+                    font-size: 15px;
+                    }
+                    .detail_recette h2 p{
+                    font-weight: normal;
+                    margin-left: 5px;
+                    }
+                .detail_commentaire {
+                    font-size: 15px;
+                    width: 50%;
+                }
