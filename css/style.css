@@ -1,16 +1,10 @@
 @import url("carte_recette.css");
-@font-face {
-    font-family: "Lato";
-    src: url(/fonts/Lato-Regular.ttf);
-}
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: "Lato", cursive;
-}
-body {
-    border: red solid;
 }
 #logo {
     margin-left: 40%;
