@@ -1,0 +1,65 @@
+class dataRecettes {
+    /*constructor(data) {
+        this.id = data.id
+        this.name = data.name
+        this.servings = data.servings
+        this.ingredient = data.ingredients
+        this.quantity = data.quantity
+        this.unit = data.unit
+        this.time = data.time
+        this.description = data.description
+        this.appliance = data.appliance
+        this.ustensils = data.ustensils
+    }*/
+
+    //CREATION DES CARTES DES RECETTES
+    creaCarte(){
+        const article = document.createElement("article");
+        article.classList.add("carte_recette");
+
+        const img = document.createElement("img");
+
+        const titreDuree = document.createElement("div");
+        titreDuree.classList.add("titre_duree");
+        article.appendChild(img);
+        article.appendChild(titreDuree);
+
+        const h1 = document.createElement("h1");
+        h1.textContent = this.name;
+        titreDuree.appendChild(h1);
+
+        const iconeTimeDiv = document.createElement("div") ;
+        const icone = document.createElement("i");
+        icone.classList.add("far_fa-clock");
+        const time = document.createElement("span");
+        time.classList.add("time");
+        time.textContent = this.time;
+        iconeTimeDiv.appendChild(icone);
+        iconeTimeDiv.appendChild(time);
+        titreDuree.appendChild(iconeTimeDiv);
+
+        const detail = document.createElement("div");
+        detail.classList.add("detail");
+        article.appendChild(detail);
+
+        const detailRecette = document.createElement("div");
+        detailRecette.classList.add("detail_recette");
+        detail.appendChild(detailRecette);
+
+        const h2 = document.createElement("h2") ;
+        h2.textContent = this.ingredient + " " + ":";
+        detailRecette.appendChild(h2);
+
+        const quantite = document.createElement("p");
+        quantite.textContent= this.quantity + this.unit;
+        h2.appendChild(quantite);
+
+        const commentaire = document.createElement("div");
+        commentaire.classList.add("detail_commentaire");
+        commentaire.textContent = this.description;
+        detail.appendChild(commentaire);
+        return article;
+
+    }
+}
+
