@@ -14,7 +14,7 @@ function displayRecette (recettes) {
     recettes.forEach(recette => {
         const creaData = new dataRecettes(recette);
         console.log(creaData)
-        const creaCarte = creaData.creaCarte(this.id);
+        const creaCarte = creaData.creaCarteDom(this.id);
         console.log(creaCarte);
         cartesRecettes.appendChild(creaCarte);
     });
@@ -22,8 +22,8 @@ function displayRecette (recettes) {
 }
 
 async function display () {
-    const recettes = await getDonnees();
-    displayRecette(recettes.recette);
+    const recette = await getDonnees();
+    displayRecette(recette);
 }
 
 display ();

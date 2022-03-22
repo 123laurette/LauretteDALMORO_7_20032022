@@ -13,7 +13,7 @@ class dataRecettes {
     }*/
 
     //CREATION DES CARTES DES RECETTES
-    creaCarte(){
+    creaCarteDom(){
         const article = document.createElement("article");
         article.classList.add("carte_recette");
 
