@@ -1,28 +1,19 @@
 
-// RECUPERATION DE LA BASE DE DONNEES
-async function getDonnees () {
-    const response = await fetch ("data/recipes.json");
-    const data = await response.json();
-    console.log(data)
-    return data;
-}
 
 const cartesRecettes = document.querySelector(".cartes_recettes");
-console.log(cartesRecettes);
 
 function displayRecette (recettes) {
     recettes.forEach(recette => {
         const creaData = new dataRecettes(recette);
-        console.log(creaData)
-        const creaCarte = creaData.creaCarteDom(this.id);
-        console.log(creaCarte);
+        const creaCarte = creaData.creaCarteDom();
         cartesRecettes.appendChild(creaCarte);
     });
 
 }
 
-async function display () {
-    const recette = await getDonnees();
+
+function display () {
+    const recette = recipes;
     displayRecette(recette);
 }
 
