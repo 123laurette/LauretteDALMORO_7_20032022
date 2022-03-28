@@ -45,19 +45,18 @@ class dataRecettes {
         const detailRecette = document.createElement("div");
         detailRecette.classList.add("detail_recette");
         detail.appendChild(detailRecette);
-        
+
         const ingredients = this.ingredients;
 
         ingredients.forEach(ingredient => {
-        const ul = document.createElement("ul") ;
-        const li = document.createElement("li");
-        li.textContent = ingredient + " " + ":";
-        detailRecette.appendChild(ul);
-        ul.appendChild(li);
+        const h2 = document.createElement("h2");
+        h2.textContent = ingredient + " " + ":";
+        detailRecette.appendChild(h2);
+        detailRecette.appendChild(h2);
             
         const quantite = document.createElement("p");
         quantite.textContent= this.quantity + this.unit;
-        li.appendChild(quantite);
+        h2.appendChild(quantite);
     });
         const commentaire = document.createElement("div");
         commentaire.classList.add("detail_commentaire");
