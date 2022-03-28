@@ -46,27 +46,46 @@ class dataRecettes {
         detailRecette.classList.add("detail_recette");
         detail.appendChild(detailRecette);
 
+
+        //parcourir le tableau des ingredients
         const ingredients = this.ingredients;
+        let tabIngredients = [];
 
         ingredients.forEach(ingredient => {
-        const h2 = document.createElement("h2");
-        h2.textContent = ingredient + " " + ":";
-        detailRecette.appendChild(h2);
-        detailRecette.appendChild(h2);
             
-        const quantite = document.createElement("p");
-        quantite.textContent= this.quantity + this.unit;
-        h2.appendChild(quantite);
-    });
+            const h2 = document.createElement("h2");
+            h2.textContent = ingredient.ingredient + " " + ":";
+            detailRecette.appendChild(h2);
+
+            //Création d'un tableau qui regroupe les ingrédients
+            tabIngredients.push(ingredient);
+            console.log(tabIngredients);
+
+            const quantite = document.createElement("p");
+
+            //Ne pas afficher de valeur nulle pour unite si elle n'est pas présente dans recipes.js
+            //Modifier le mot "grammes" par "g"
+
+            if (! ingredient.unit){
+                quantite.textContent = ingredient.quantity;
+            }
+            else if (ingredient.unit == "grammes"){
+                quantite.textContent = ingredient.quantity + " "+ "g";
+            }
+            else{
+                quantite.textContent= ingredient.quantity + " " +  ingredient.unit;
+            }
+            
+            h2.appendChild(quantite);
+
+        });
+
         const commentaire = document.createElement("div");
         commentaire.classList.add("detail_commentaire");
         commentaire.textContent = this.description;
         detail.appendChild(commentaire);
 
-        
         return article;
-
-
     }
 }
 
