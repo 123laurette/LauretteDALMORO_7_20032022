@@ -49,17 +49,13 @@ class dataRecettes {
 
         //parcourir le tableau des ingredients
         const ingredients = this.ingredients;
-        let tabIngredients = [];
+        
 
         ingredients.forEach(ingredient => {
             
             const h2 = document.createElement("h2");
             h2.textContent = ingredient.ingredient + " " + ":";
             detailRecette.appendChild(h2);
-
-            //Création d'un tableau qui regroupe les ingrédients
-            tabIngredients.push(ingredient);
-            console.log(tabIngredients);
 
             const quantite = document.createElement("p");
 

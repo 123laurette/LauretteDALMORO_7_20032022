@@ -34,7 +34,6 @@
                 margin-left: 15px;
                 margin-right: 15px;
                 font-size: 18px;
-                border: violet solid;
             }
                 .titre_duree h1 {
                     width: 70%;
@@ -53,17 +52,19 @@
                 }    
                     .detail_recette h2 {
                     display: flex;
-                    font-size: 15px;
+                    font-size: 13px;
                     }
                     .detail_recette h2 p{
                     font-weight: normal;
                     margin-left: 5px;
                     }
                 .detail_commentaire {
-                    font-size: 15px;
+                    font-size: 13px;
                     width: 50%;
-                    height: 100px;
+                    height: 110px;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 7;
+                    -webkit-box-orient: vertical;
                     overflow: hidden;
                     text-overflow: ellipsis;
-                    border: blue solid;
                 }
