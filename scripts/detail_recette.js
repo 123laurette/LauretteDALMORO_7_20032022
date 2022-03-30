@@ -54,22 +54,27 @@ class dataRecettes {
         ingredients.forEach(ingredient => {
             
             const h2 = document.createElement("h2");
+            //Ne pas afficher les deux points quand il n'y a pas de quantité
+            if (! ingredient.quantity){
+                h2.textContent = ingredient.ingredient;
+            }
+            else {
             h2.textContent = ingredient.ingredient + " " + ":";
+            }
             detailRecette.appendChild(h2);
 
             const quantite = document.createElement("p");
 
             //Ne pas afficher de valeur nulle pour unite si elle n'est pas présente dans recipes.js
-            //Modifier le mot "grammes" par "g"
-
             if (! ingredient.unit){
                 quantite.textContent = ingredient.quantity;
             }
+            //Modifier le mot "grammes" par "g"
             else if (ingredient.unit == "grammes"){
-                quantite.textContent = ingredient.quantity + " "+ "g";
+                quantite.textContent =  " " + ingredient.quantity + " "+ "g";
             }
             else{
-                quantite.textContent= ingredient.quantity + " " +  ingredient.unit;
+                quantite.textContent= " " + ingredient.quantity + " " +  ingredient.unit;
             }
             
             h2.appendChild(quantite);
