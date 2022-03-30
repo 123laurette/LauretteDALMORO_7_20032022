@@ -59,8 +59,9 @@ class dataRecettes {
                 h2.textContent = ingredient.ingredient;
             }
             else {
-            h2.textContent = ingredient.ingredient + " " + ":";
+                h2.textContent = ingredient.ingredient + " " + ":";
             }
+            
             detailRecette.appendChild(h2);
 
             const quantite = document.createElement("p");
@@ -89,4 +90,5 @@ class dataRecettes {
         return article;
     }
 }
+
 

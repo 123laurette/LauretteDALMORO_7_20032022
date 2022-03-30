@@ -66,7 +66,7 @@
     .ingredients, .appareils, .ustensiles {
         width: 20%;
         height: 50px;
-        color: white;
+        color: black;
         margin-top: 20px;
         margin-right: 20px;
         text-align: center;
@@ -79,12 +79,17 @@
 
     .ingredients {
         background: #3282F7;
+        list-style-type: none;
     }
     .appareils{
         background-color: #68d9a4;
+        list-style-type: none;
+
     }
     .ustensiles {
         background-color: #ed6454;
+        list-style-type: none;
+
     }
 
 

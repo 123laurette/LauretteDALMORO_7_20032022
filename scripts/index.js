@@ -1,5 +1,3 @@
-
-
 const cartesRecettes = document.querySelector(".cartes_recettes");
 
 function displayRecette (recettes) {
@@ -8,7 +6,6 @@ function displayRecette (recettes) {
         const creaCarte = creaData.creaCarteDom();
         cartesRecettes.appendChild(creaCarte);
     });
-
 }
 
 
