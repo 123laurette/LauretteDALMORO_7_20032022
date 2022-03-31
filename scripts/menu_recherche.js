@@ -24,7 +24,7 @@ class dataRecherche {
 
 }
 
-const menuRecherche = document.querySelector(".menu_recherche");
+const btnIngredients = document.querySelector(".btn_ingredients");
 
 function displayRecetteListe (recettes) {
     recettes.forEach(recette => {
@@ -32,7 +32,7 @@ function displayRecetteListe (recettes) {
         const creaIngredient = creaDataListe.creaListIngredientsDom();
         //const creaAppareil = creaIngredient.creaListAppareilsDom();
         //const creaUstensile = creaAppareil.creaListUstensilesDom();
-        menuRecherche.appendChild(creaIngredient);
+        btnIngredients.appendChild(creaIngredient);
     });
 }
 

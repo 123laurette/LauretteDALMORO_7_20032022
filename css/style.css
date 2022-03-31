@@ -63,23 +63,37 @@
     width: 50%;
     margin-left: 100px;
 }
-    .ingredients, .appareils, .ustensiles {
-        width: 20%;
+    .btn_ingredients p {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        width: auto;
         height: 50px;
-        color: black;
+        color: white;
         margin-top: 20px;
         margin-right: 20px;
-        text-align: center;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: 700;
+        background: #3282F7;
+
+    }
+    .ingredients, .appareils, .ustensiles {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        color: white;
+        margin-right: 20px;
         border-radius: 5px;
         border: none;
         font-size: 18px;
-        font-weight: 700;
     }
     
-
     .ingredients {
         background: #3282F7;
         list-style-type: none;
+        border: violet solid;
     }
     .appareils{
         background-color: #68d9a4;
