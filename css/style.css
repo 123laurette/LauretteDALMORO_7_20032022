@@ -63,22 +63,23 @@
     width: 50%;
     margin-left: 100px;
 }
-    .btn_ingredients p {
+    .btn_ingredients p, .btn_appareils p, .btn_ustensiles p{
         display: flex;
-        flex-direction: column;
         justify-content: center;
         text-align: center;
         width: auto;
         height: 50px;
         color: white;
         margin-top: 20px;
-        margin-right: 20px;
         border-radius: 5px;
         font-size: 18px;
         font-weight: 700;
-        background: #3282F7;
 
     }
+    .btn_ingredients i, .btn_appareils i, .btn_ustensiles i{
+        color: white;
+    }
+
     .ingredients, .appareils, .ustensiles {
         display: flex;
         flex-direction: column;
@@ -90,17 +91,17 @@
         font-size: 18px;
     }
     
-    .ingredients {
+    .btn_ingredients, .ingredients {
         background: #3282F7;
         list-style-type: none;
         border: violet solid;
     }
-    .appareils{
+    .btn_appareils, .appareils{
         background-color: #68d9a4;
         list-style-type: none;
 
     }
-    .ustensiles {
+    .btn_ustensiles, .ustensiles {
         background-color: #ed6454;
         list-style-type: none;
 
