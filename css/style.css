@@ -64,39 +64,49 @@
     width: 50%;
     margin-left: 100px;
 }
+.global_ingredients, .global_appareils, .global_ustensiles {
+    width: 100%;
+}
 
-    .btn_ingredients { /*regroupe titre ingrédients et icone chevron*/
+    .btn_ingredients, .btn_appareils, .btn_ustensiles { /*regroupe titre ingrédients et icone chevron*/
         display: flex;
         justify-content: space-around;
         align-items: center;
         border-radius: 5px;
         margin-top: 10px;
-        width: 20%;
+        width: 70%;
         height: 50px;
-        background-color: #3282F7;
         color: white;
         font-size: 18px;
-        border: #3282F7 solid;
-        position: relative;
+    }
+    
+    .btn_ingredients, .liste_ingredients, .detail_ingredients {
+        background-color: #3282F7;
+    }
+    .btn_appareils, .liste_appareils, .detail_appareils {
+        background-color: #68d9a4;
+    }
+    .btn_ustensiles, .liste_ustensiles, .detail_ustensiles {
+        background-color: #ed6454;
     }
         
-    .liste_ingredients { /*regroupe input et close et tous les ingredients*/
+    .liste_ingredients, .liste_appareils, .liste_ustensiles { /*regroupe input et close et tous les ingredients*/
         color: white;
         width: 37%;
         height: 610px;
         margin-top: 10px;
-        background-color: #3282F7;
         border-radius: 5px;
         position: absolute;
+        transform: translateY(-60px);
         display: none;
     }
+    
         .input_close { /*regroupe input et close uniquement*/
             display: flex;
             justify-content: space-around;
             align-items: center;
         }
-        .detail_ingredients { /*input uniquement*/
-            background: #3282F7;
+        .detail_ingredients, .detail_appareils, .detail_ustensiles { /*input uniquement*/
             width: 80%;
             height: 50px;
             font-size: 18px;
@@ -104,11 +114,10 @@
             padding-left: 10px;
             margin-top: 10px;
         }
-        .container_ingredients{ /*regroupe ul et li*/
+        .container{ /*regroupe ul et li*/
             height: 545px;
             width: 100%;
             padding-top: 10px;
-            background-color: #3282F7;
         }
             .ingredients {  /*ul qui regroupe les li*/
                 display: flex;
