@@ -119,12 +119,12 @@
             width: 100%;
             padding-top: 10px;
         }
-            .ingredients {  /*ul qui regroupe les li*/
+            .ingredients, .ustensiles, .appareils {  /*ul qui regroupe les li*/
                 display: flex;
                 flex-wrap: wrap;
                 padding-left: 60px;
             }
-                .ingredients li{
+                .ingredients li, .ustensiles li, .appareils li{
                 width: 30%;
                 height: 30px;
                 list-style-type: none;

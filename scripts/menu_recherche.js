@@ -11,9 +11,22 @@ class dataRecherche {
 
         ingredients.forEach(ingredient => {
             liIngredients.textContent = ingredient.ingredient;
-            ulIngredients.appendChild(liIngredients);
         });
         return liIngredients;
+    }
+    creaListUstensilesDom() {
+        const ustensiles = this.ustensils;
+        const liUstensiles = document.createElement("li");
+
+        ustensiles.forEach(ustensile => {
+            liUstensiles.textContent = ustensile;
+        });
+        return liUstensiles;
+    }
+    creaListAppareilsDom() {
+        const liAppareils = document.createElement("li");
+        liAppareils.textContent = this.appliance;
+        return liAppareils;
     }
 }
 
@@ -74,21 +87,9 @@ function closeListeUstensiles(){
     
 
 
-/*creaListAppareilsDom() {
-    const ulAppareils = document.createElement("ul");
-    ulAppareils.classList.add("appareils");
 
-    const appareils = this.appliance;
 
-    appareils.forEach(appareil => {
-        const liAppareils = document.createElement("li");
-        liAppareils.textContent = appareil;
-        ulAppareils.appendChild(liAppareils);
-    });
-    return ulAppareils;
-}
-
-creaListUstensilesDom() {
+/*creaListUstensilesDom() {
     const ulUstensiles = document.createElement("ul");
     ulUstensiles.classList.add(".ustensiles");
 

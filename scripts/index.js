@@ -18,14 +18,20 @@ display ();
 
 
 const ulIngredients = document.querySelector(".ingredients");
+const ulAppareils = document.querySelector(".appareils");
+const ulUstensiles = document.querySelector(".ustensiles");
+
 
 function displayRecetteListe (recettes) {
     recettes.forEach(recette => {
         const creaDataListe = new dataRecherche(recette);
+        console.log(creaDataListe);
         const creaIngredient = creaDataListe.creaListIngredientsDom();
-        //const creaAppareil = creaIngredient.creaListAppareilsDom();
-        //const creaUstensile = creaAppareil.creaListUstensilesDom();
+        const creaAppareil = creaDataListe.creaListAppareilsDom();
+        const creaUstensile = creaDataListe.creaListUstensilesDom();
         ulIngredients.appendChild(creaIngredient);
+        ulAppareils.appendChild(creaAppareil);
+        ulUstensiles.appendChild(creaUstensile);
     });
 }
 
