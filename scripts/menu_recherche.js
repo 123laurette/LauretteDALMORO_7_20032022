@@ -38,6 +38,8 @@ const openBleu = document.getElementById("bleu-down");
 const openVert = document.getElementById("vert-down");
 const openRouge = document.getElementById("rouge-down");
 const btnVert = document.querySelector(".btn_appareils");
+const btnRouge = document.querySelector(".btn_ustensiles");
+
 
 const openListeBleu = document.querySelector(".liste_ingredients");
 const openListeVert = document.querySelector(".liste_appareils");
@@ -48,12 +50,17 @@ openBleu.addEventListener("click", openListeIngredients);
 function openListeIngredients(){
     openBleu.style.display = "none";
     openListeBleu.style.display = "block";
+    btnVert.style.transform = "translateX(450px)";
+    btnRouge.style.transform = "translateX(400px)";
+
 }
 openVert.addEventListener("click", openListeAppareils);
 
 function openListeAppareils(){
     openVert.style.display = "none";
     openListeVert.style.display = "block";
+    btnRouge.style.transform = "translateX(470px)";
+
 } 
 openRouge.addEventListener("click", openListeUstensiles);
 
@@ -74,11 +81,15 @@ closeRouge.addEventListener("click", closeListeUstensiles);
 
 function closeListeIngredients(){
     openBleu.style.display = "block";
-    openListeBleu.style.display = "none";  
+    openListeBleu.style.display = "none"; 
+    btnVert.style.transform = "translateX(0)";
+    btnRouge.style.transform = "translateX(0)"; 
 }
 function closeListeAppareils(){
     openVert.style.display = "block";
     openListeVert.style.display = "none";
+    btnRouge.style.transform = "translateX(0)";
+
 }
 function closeListeUstensiles(){
     openRouge.style.display = "block";
