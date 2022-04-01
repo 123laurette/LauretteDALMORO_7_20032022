@@ -16,27 +16,62 @@ class dataRecherche {
         return liIngredients;
     }
 }
-//OUVERTURE DE LA LISTE INGREDIENTS
-const open = document.querySelector(".fa-chevron-down");
-const openListe = document.querySelector(".liste_ingredients");
 
-open.addEventListener("click", openListeIngredient);
 
-function openListeIngredient(){
-    open.style.display = "none";
-    openListe.style.display = "block";
+
+
+//OUVERTURE DES LISTES
+const openBleu = document.getElementById("bleu-down");
+const openVert = document.getElementById("vert-down");
+const openRouge = document.getElementById("rouge-down");
+const btnVert = document.querySelector(".btn_appareils");
+
+const openListeBleu = document.querySelector(".liste_ingredients");
+const openListeVert = document.querySelector(".liste_appareils");
+const openListeRouge= document.querySelector(".liste_ustensiles");
+
+openBleu.addEventListener("click", openListeIngredients);
+
+function openListeIngredients(){
+    openBleu.style.display = "none";
+    openListeBleu.style.display = "block";
+}
+openVert.addEventListener("click", openListeAppareils);
+
+function openListeAppareils(){
+    openVert.style.display = "none";
+    openListeVert.style.display = "block";
 } 
+openRouge.addEventListener("click", openListeUstensiles);
+
+function openListeUstensiles(){
+    openRouge.style.display = "none";
+    openListeRouge.style.display = "block";
+}
     
-//FERMETURE DE LA LISTE INGREDIENTS
-const closeListe = document.querySelector(".fa-chevron-up");
+    
+//FERMETURE DES LISTES
+const closeBleu = document.getElementById("bleu-up");
+const closeVert = document.getElementById("vert-up");
+const closeRouge = document.getElementById("rouge-up");
 
-closeListe.addEventListener("click", closeListeIngredient);
+closeBleu.addEventListener("click", closeListeIngredients);
+closeVert.addEventListener("click", closeListeAppareils);
+closeRouge.addEventListener("click", closeListeUstensiles);
 
-function closeListeIngredient(){
-    open.style.display = "block";
-    openListe.style.display = "none";
-} 
-
+function closeListeIngredients(){
+    openBleu.style.display = "block";
+    openListeBleu.style.display = "none";  
+}
+function closeListeAppareils(){
+    openVert.style.display = "block";
+    openListeVert.style.display = "none";
+}
+function closeListeUstensiles(){
+    openRouge.style.display = "block";
+    openListeRouge.style.display = "none";
+}
+    
 
 
 /*creaListAppareilsDom() {
