@@ -1,4 +1,3 @@
-
 class dataRecherche {
     constructor(data) {
         this.ingredients = data.ingredients
@@ -6,42 +5,37 @@ class dataRecherche {
         this.ustensils = data.ustensils
     }
     
-
     creaListIngredientsDom() {
-        const ulIngredients = document.createElement("ul");
-        ulIngredients.classList.add("ingredients");
-
         const ingredients = this.ingredients;
-        console.log(ingredients);
+        const liIngredients = document.createElement("li");
 
         ingredients.forEach(ingredient => {
-            const liIngredients = document.createElement("li");
             liIngredients.textContent = ingredient.ingredient;
             ulIngredients.appendChild(liIngredients);
         });
-        return ulIngredients;
+        return liIngredients;
     }
-
 }
+//OUVERTURE DE LA LISTE INGREDIENTS
+const open = document.querySelector(".fa-chevron-down");
+const openListe = document.querySelector(".liste_ingredients");
 
-const btnIngredients = document.querySelector(".btn_ingredients");
+open.addEventListener("click", openListeIngredient);
 
-function displayRecetteListe (recettes) {
-    recettes.forEach(recette => {
-        const creaDataListe = new dataRecherche(recette);
-        const creaIngredient = creaDataListe.creaListIngredientsDom();
-        //const creaAppareil = creaIngredient.creaListAppareilsDom();
-        //const creaUstensile = creaAppareil.creaListUstensilesDom();
-        btnIngredients.appendChild(creaIngredient);
-    });
-}
+function openListeIngredient(){
+    open.style.display = "none";
+    openListe.style.display = "block";
+} 
+    
+//FERMETURE DE LA LISTE INGREDIENTS
+const closeListe = document.querySelector(".fa-chevron-up");
 
-function displayListe (){
-    const recette = recipes;
-    console.log(recette);
-    displayRecetteListe(recette);
-}
-displayListe();
+closeListe.addEventListener("click", closeListeIngredient);
+
+function closeListeIngredient(){
+    open.style.display = "block";
+    openListe.style.display = "none";
+} 
 
 
 
