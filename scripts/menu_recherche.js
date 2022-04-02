@@ -4,28 +4,55 @@ class dataRecherche {
         this.appliance = data.appliance
         this.ustensils = data.ustensils
     }
-    
-    creaListIngredientsDom() {
-        const ingredients = this.ingredients;
-        const liIngredients = document.createElement("li");
-
-        ingredients.forEach(ingredient => {
-            liIngredients.textContent = ingredient.ingredient;
+        
+    creaIngredientsDom(recettes) {
+        let tabIngredients = [];
+        recettes.forEach((recette) => {
+            recette.ingredients.map((element) => {
+                tabIngredients.push(element.ingredient);//Je fais mon tableau
+            });
         });
-        return liIngredients;
+        tabIngredients = [...new Set (tabIngredients)].sort();//Je trie pour supp les doublons
+            console.log(tabIngredients);
+
+
+        tabIngredients.forEach((element) =>{
+            const liIngredients = document.createElement("li");
+            liIngredients.textContent = element;
+            return liIngredients;
+
+        });
+
+
     }
-    creaListUstensilesDom() {
-        const ustensiles = this.ustensils;
-        const liUstensiles = document.createElement("li");
 
-        ustensiles.forEach(ustensile => {
-            liUstensiles.textContent = ustensile;
+    creaUstensilesDom(recettes) {
+        let tabUstensiles = [];
+        recettes.forEach((recette) => {
+            recette.ustensils.map((element) => {
+                tabUstensiles.push(element);
+            });
+            
         });
+
+        tabUstensiles = [...new Set (tabUstensiles)].sort();
+            console.log(tabUstensiles);
+        const liUstensiles = document.createElement("li");
+        liUstensiles.textContent = tabUstensiles;
+
         return liUstensiles;
     }
-    creaListAppareilsDom() {
+    creaAppareilsDom(recettes) {
+        let tabAppareils = [];
+        recettes.forEach((recette) => {
+            tabAppareils.push(recette.appliance);
+        });
+
+        tabAppareils = [...new Set (tabAppareils)].sort();
+            console.log(tabAppareils);
         const liAppareils = document.createElement("li");
-        liAppareils.textContent = this.appliance;
+        liAppareils.textContent = tabAppareils;
+
         return liAppareils;
     }
 }
@@ -100,18 +127,5 @@ function closeListeUstensiles(){
 
 
 
-/*creaListUstensilesDom() {
-    const ulUstensiles = document.createElement("ul");
-    ulUstensiles.classList.add(".ustensiles");
 
-    const ustensiles = this.ustensils;
-    console.log(ustensiles);
-
-    ustensiles.forEach(ustensile => {
-        const liUstensiles = document.createElement("li");
-        liUstensiles.textContent = ustensiles.ustensile;
-        ulUstensiles.appendChild(liUstensiles);
-    });
-    return ulUstensiles;
-}*/
 

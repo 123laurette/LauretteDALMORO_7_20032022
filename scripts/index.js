@@ -1,3 +1,20 @@
+
+const ulIngredients = document.querySelector(".ingredients");
+const ulAppareils = document.querySelector(".appareils");
+const ulUstensiles = document.querySelector(".ustensiles");
+
+function displayListe (recette) {
+    const creaDataListe = new dataRecherche(recette);
+    const creaIngredient = creaDataListe.creaIngredientsDom(recette);
+    const creaUstensile = creaDataListe.creaUstensilesDom(recette);
+    const creaAppareil = creaDataListe.creaAppareilsDom(recette);
+
+    ulIngredients.appendChild(creaIngredient);
+    ulUstensiles.appendChild(creaUstensile);
+    ulAppareils.appendChild(creaAppareil)
+}
+
+
 const cartesRecettes = document.querySelector(".cartes_recettes");
 
 function displayRecette (recettes) {
@@ -9,34 +26,12 @@ function displayRecette (recettes) {
 }
 
 
-function display () {
+function init () {
     const recette = recipes;
+    displayListe(recette);
     displayRecette(recette);
 }
 
-display ();
+init ();
 
 
-const ulIngredients = document.querySelector(".ingredients");
-const ulAppareils = document.querySelector(".appareils");
-const ulUstensiles = document.querySelector(".ustensiles");
-
-
-function displayRecetteListe (recettes) {
-    recettes.forEach(recette => {
-        const creaDataListe = new dataRecherche(recette);
-        console.log(creaDataListe);
-        const creaIngredient = creaDataListe.creaListIngredientsDom();
-        const creaAppareil = creaDataListe.creaListAppareilsDom();
-        const creaUstensile = creaDataListe.creaListUstensilesDom();
-        ulIngredients.appendChild(creaIngredient);
-        ulAppareils.appendChild(creaAppareil);
-        ulUstensiles.appendChild(creaUstensile);
-    });
-}
-
-function displayListe (){
-    const recette = recipes;
-    displayRecetteListe(recette);
-}
-displayListe();

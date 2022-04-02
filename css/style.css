@@ -12,6 +12,8 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+/*......................BARRE DE RECHERCHE GLOBALE..................*/
 .barre_recherche {
     display: flex;
     justify-content: space-between;
@@ -58,76 +60,78 @@
         color: white;
         font-size: 20px;
     }
+
+/*......................BOUTON DE FILTRE....................*/    
 .menu_recherche {
     display: flex;
     justify-content: space-between;
     width: 50%;
     margin-left: 100px;
 }
-.global_ingredients, .global_appareils, .global_ustensiles {
-    width: 100%;
-}
+    .global_ingredients, .global_appareils, .global_ustensiles {
+        width: 100%;
+    }
 
-    .btn_ingredients, .btn_appareils, .btn_ustensiles { /*regroupe titre ingrédients et icone chevron*/
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        border-radius: 5px;
-        margin-top: 10px;
-        width: 70%;
-        height: 50px;
-        color: white;
-        font-size: 18px;
-    }
-    
-    .btn_ingredients, .liste_ingredients, .detail_ingredients {
-        background-color: #3282F7;
-    }
-    .btn_appareils, .liste_appareils, .detail_appareils {
-        background-color: #68d9a4;
-    }
-    .btn_ustensiles, .liste_ustensiles, .detail_ustensiles {
-        background-color: #ed6454;
-    }
-        
-    .liste_ingredients, .liste_appareils, .liste_ustensiles { /*regroupe input et close et tous les ingredients*/
-        color: white;
-        width: 37%;
-        height: 610px;
-        margin-top: 10px;
-        border-radius: 5px;
-        position: absolute;
-        transform: translateY(-60px);
-        display: none;
-    }
-    
-        .input_close { /*regroupe input et close uniquement*/
+        .btn_ingredients, .btn_appareils, .btn_ustensiles { /*regroupe titre ingrédients et icone chevron*/
             display: flex;
             justify-content: space-around;
             align-items: center;
-        }
-        .detail_ingredients, .detail_appareils, .detail_ustensiles { /*input uniquement*/
-            width: 80%;
-            height: 50px;
-            font-size: 18px;
-            margin-left: 18px;
-            padding-left: 10px;
+            border-radius: 5px;
             margin-top: 10px;
+            width: 70%;
+            height: 50px;
+            color: white;
+            font-size: 18px;
         }
-        .container{ /*regroupe ul et li*/
-            height: 545px;
-            width: 100%;
-            padding-top: 10px;
+    
+        .btn_ingredients, .liste_ingredients, .detail_ingredients {
+            background-color: #3282F7;
         }
-            .ingredients, .ustensiles, .appareils {  /*ul qui regroupe les li*/
+        .btn_appareils, .liste_appareils, .detail_appareils {
+            background-color: #68d9a4;
+        }
+        .btn_ustensiles, .liste_ustensiles, .detail_ustensiles {
+            background-color: #ed6454;
+        }
+        
+        .liste_ingredients, .liste_appareils, .liste_ustensiles { /*regroupe input et close et tous les ingredients*/
+            color: white;
+            width: 37%;
+            height: 610px;
+            margin-top: 10px;
+            border-radius: 5px;
+            position: absolute;
+            transform: translateY(-60px);
+            display: none;
+        }
+    
+            .input_close { /*regroupe input et close uniquement*/
                 display: flex;
-                flex-wrap: wrap;
-                padding-left: 60px;
+                justify-content: space-around;
+                align-items: center;
             }
-                .ingredients li, .ustensiles li, .appareils li{
-                width: 30%;
-                height: 30px;
-                list-style-type: none;
-                font-size: 18px;
-                color: white;
+                .detail_ingredients, .detail_appareils, .detail_ustensiles { /*input uniquement*/
+                    width: 80%;
+                    height: 50px;
+                    font-size: 18px;
+                    margin-left: 18px;
+                    padding-left: 10px;
+                    margin-top: 10px;
+                }
+            .container{ /*regroupe ul et li*/
+                height: 545px;
+                width: 100%;
+                padding-top: 10px;
             }
+                .ingredients, .ustensiles, .appareils {  /*ul qui regroupe les li*/
+                    display: flex;
+                    flex-wrap: wrap;
+                    padding-left: 60px;
+                }
+                    .ingredients li, .ustensiles li, .appareils li{
+                    width: 30%;
+                    height: 30px;
+                    list-style-type: none;
+                    font-size: 18px;
+                    color: white;
+                }
