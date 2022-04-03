@@ -4,58 +4,67 @@ class dataRecherche {
         this.appliance = data.appliance
         this.ustensils = data.ustensils
     }
-        
+
+    // ......INGREDIENTS PUSH ARRAY, SUPP DOUBLONS ET TRIE, CREA LI PAR ELEMENT.....
     creaIngredientsDom(recettes) {
         let tabIngredients = [];
-        recettes.forEach((recette) => {
-            recette.ingredients.map((element) => {
-                tabIngredients.push(element.ingredient);//Je fais mon tableau
+
+        recettes.forEach(recette => {
+            recette.ingredients.map((ingredient) => {
+                tabIngredients.push(ingredient.ingredient);//Je fais mon tableau
             });
         });
         tabIngredients = [...new Set (tabIngredients)].sort();//Je trie pour supp les doublons
-            console.log(tabIngredients);
-
-
-        tabIngredients.forEach((element) =>{
+            
+        //........je crée un li pour chaque element.............
+        tabIngredients.forEach(ingredient => {
             const liIngredients = document.createElement("li");
-            liIngredients.textContent = element;
-            return liIngredients;
-
-        });
-
-
+            liIngredients.textContent = ingredient;
+                console.log(liIngredients);
+        })
+        
     }
 
+    // ......USTENSILES PUSH ARRAY, SUPP DOUBLONS ET TRIE, CREA LI PAR ELEMENT.....
     creaUstensilesDom(recettes) {
         let tabUstensiles = [];
-        recettes.forEach((recette) => {
-            recette.ustensils.map((element) => {
-                tabUstensiles.push(element);
+        recettes.forEach(recette => {
+            recette.ustensils.map((ustensile) => {
+                tabUstensiles.push(ustensile);
             });
-            
         });
 
         tabUstensiles = [...new Set (tabUstensiles)].sort();
-            console.log(tabUstensiles);
-        const liUstensiles = document.createElement("li");
-        liUstensiles.textContent = tabUstensiles;
 
-        return liUstensiles;
+        //........je crée un li pour chaque element.............
+
+        tabUstensiles.forEach(ustensile => {
+            const liUstensiles = document.createElement("li");
+            liUstensiles.textContent = ustensile;
+            console.log(liUstensiles);
+        })        
     }
+
+    // ......APPAREILS PUSH ARRAY, SUPP DOUBLONS ET TRIE, CREA LI PAR ELEMENT.....
+
     creaAppareilsDom(recettes) {
         let tabAppareils = [];
-        recettes.forEach((recette) => {
+        recettes.forEach(recette => {
             tabAppareils.push(recette.appliance);
         });
 
         tabAppareils = [...new Set (tabAppareils)].sort();
-            console.log(tabAppareils);
-        const liAppareils = document.createElement("li");
-        liAppareils.textContent = tabAppareils;
 
-        return liAppareils;
+        //........je crée un li pour chaque element.............
+        tabAppareils.forEach(appareil => {
+            const liAppareils = document.createElement("li");
+            liAppareils.textContent = appareil;
+            console.log(liAppareils);
+        })
+        
     }
 }
+
 
 
 

@@ -123,7 +123,7 @@
                 width: 100%;
                 padding-top: 10px;
             }
-                .ingredients, .ustensiles, .appareils {  /*ul qui regroupe les li*/
+                #ingredients, #ustensiles, #appareils {  /*ul qui regroupe les li*/
                     display: flex;
                     flex-wrap: wrap;
                     padding-left: 60px;

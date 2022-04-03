@@ -1,7 +1,7 @@
 
-const ulIngredients = document.querySelector(".ingredients");
-const ulAppareils = document.querySelector(".appareils");
-const ulUstensiles = document.querySelector(".ustensiles");
+const ulIngredients = document.getElementById("ingredients");
+const ulAppareils = document.getElementById("appareils");
+const ulUstensiles = document.getElementById("ustensiles");
 
 function displayListe (recette) {
     const creaDataListe = new dataRecherche(recette);
@@ -9,9 +9,9 @@ function displayListe (recette) {
     const creaUstensile = creaDataListe.creaUstensilesDom(recette);
     const creaAppareil = creaDataListe.creaAppareilsDom(recette);
 
-    ulIngredients.appendChild(creaIngredient);
-    ulUstensiles.appendChild(creaUstensile);
-    ulAppareils.appendChild(creaAppareil)
+    //ulIngredients.appendChild(creaIngredient);
+    //ulUstensiles.appendChild(creaUstensile);
+    //ulAppareils.appendChild(creaAppareil)
 }
 
 
