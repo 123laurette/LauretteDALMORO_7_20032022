@@ -1,12 +1,10 @@
-class dataRecherche {
-    constructor(data) {
-        this.ingredients = data.ingredients
-        this.appliance = data.appliance
-        this.ustensils = data.ustensils
-    }
 
-    // ......INGREDIENTS PUSH ARRAY, SUPP DOUBLONS ET TRIE, CREA LI PAR ELEMENT.....
-    creaIngredientsDom(recettes) {
+
+
+
+// ......INGREDIENTS PUSH ARRAY, SUPP DOUBLONS ET TRIE, CREA LI PAR ELEMENT.....
+
+    function creaIngredientsDom(recettes) {
         let tabIngredients = [];
 
         recettes.forEach(recette => {
@@ -15,19 +13,26 @@ class dataRecherche {
             });
         });
         tabIngredients = [...new Set (tabIngredients)].sort();//Je trie pour supp les doublons
-            
+            console.log(tabIngredients);
         //........je crée un li pour chaque element.............
+        const ingredientsDiv = document.getElementById("ingredients_div");
+        let ulIngredients = document.createElement("ul");
+        ulIngredients.id = "ingredients";
         tabIngredients.forEach(ingredient => {
             const liIngredients = document.createElement("li");
-            liIngredients.textContent = ingredient;
-                console.log(liIngredients);
-        })
-        
+            liIngredients.innerHTML = ingredient;
+            liIngredients.value = ingredient;
+            ulIngredients.appendChild(liIngredients);
+        });
+        ingredientsDiv.appendChild(ulIngredients);
+
     }
 
+
     // ......USTENSILES PUSH ARRAY, SUPP DOUBLONS ET TRIE, CREA LI PAR ELEMENT.....
-    creaUstensilesDom(recettes) {
+    function creaUstensilesDom(recettes) {
         let tabUstensiles = [];
+
         recettes.forEach(recette => {
             recette.ustensils.map((ustensile) => {
                 tabUstensiles.push(ustensile);
@@ -37,18 +42,23 @@ class dataRecherche {
         tabUstensiles = [...new Set (tabUstensiles)].sort();
 
         //........je crée un li pour chaque element.............
-
+        const ustensilesDiv = document.getElementById("ustensiles_div");
+        let ulustensiles = document.createElement("ul");
+        ulustensiles.id = "ustensiles";
         tabUstensiles.forEach(ustensile => {
-            const liUstensiles = document.createElement("li");
-            liUstensiles.textContent = ustensile;
-            console.log(liUstensiles);
-        })        
+            const liUstensile = document.createElement("li");
+            liUstensile.innerHTML = ustensile;
+            liUstensile.value = ustensile;
+            ulustensiles.appendChild(liUstensile);
+        });
+        ustensilesDiv.appendChild(ulustensiles);        
     }
 
     // ......APPAREILS PUSH ARRAY, SUPP DOUBLONS ET TRIE, CREA LI PAR ELEMENT.....
 
-    creaAppareilsDom(recettes) {
+    function creaAppareilsDom(recettes) {
         let tabAppareils = [];
+        
         recettes.forEach(recette => {
             tabAppareils.push(recette.appliance);
         });
@@ -56,14 +66,19 @@ class dataRecherche {
         tabAppareils = [...new Set (tabAppareils)].sort();
 
         //........je crée un li pour chaque element.............
+        const appareilsDiv = document.getElementById("appareils_div");
+        let ulappareils = document.createElement("ul");
+        ulappareils.id = "appareils";
         tabAppareils.forEach(appareil => {
-            const liAppareils = document.createElement("li");
-            liAppareils.textContent = appareil;
-            console.log(liAppareils);
-        })
+            const liAppareil = document.createElement("li");
+            liAppareil.innerHTML = appareil;
+            liAppareil.value = appareil;
+            ulappareils.appendChild(liAppareil);
+        });
+        appareilsDiv.appendChild(ulappareils);        
         
     }
-}
+
 
 
 
@@ -86,8 +101,8 @@ openBleu.addEventListener("click", openListeIngredients);
 function openListeIngredients(){
     openBleu.style.display = "none";
     openListeBleu.style.display = "block";
-    btnVert.style.transform = "translateX(450px)";
-    btnRouge.style.transform = "translateX(400px)";
+    btnVert.style.transform = "translateX(200px)";
+    btnRouge.style.transform = "translateX(200px)";
 
 }
 openVert.addEventListener("click", openListeAppareils);

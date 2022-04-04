@@ -20,7 +20,7 @@
 
         <div class="barre_recherche">
         <form method="post" action="traitement.php">
-            <input class="barre_champ" type="search" value="Rechercher une recette"/>
+            <input class="barre_champ" type="search" value="Rechercher une recette ou un ingrédient"/>
         </form>
         <i class="fas fa-search"></i>
         </div>
@@ -33,60 +33,49 @@
         </aside>
 
         <section class="menu_recherche">
-
-            <div class="global_ingredients">
-                <div class="btn_ingredients">
-                    <p>Ingrédients</p>
-                    <i class="fas fa-chevron-down" id="bleu-down"></i>
-                </div>
+            <div class="btn_ingredients">
+                <p>Ingredients</p>
+                <i class="fas fa-chevron-down" id="bleu-down"></i>
+            </div>
                 <div class="liste_ingredients">
-                    <div class="input_close">
-                        <input class="detail_ingredients" type="search" placeholder="Rechercher un ingrédient">                       
+                    <div class="input_close_ingredients">
+                        <input id="input_ingredients" type="text"  value ="Rechercher un ingrédient">                       
                         <i class="fas fa-chevron-up" id="bleu-up"></i> 
                     </div>
-                    <div class="container_ingredients">
-                        <ul id="ingredients"></ul>
+                    <div id="ingredients_div">
                     </div>
                 </div>
-            </div>
 
-            <div class="global_appareils">
                 <div class="btn_appareils">
                     <p>Appareils</p>
                     <i class="fas fa-chevron-down" id="vert-down"></i>
                 </div>
-                <div class="liste_appareils">
-                    <div class="input_close">
-                        <input class="detail_appareils" type="search" placeholder="Rechercher un appareil">                       
-                        <i class="fas fa-chevron-up" id="vert-up"></i> 
+                    <div class="liste_appareils">
+                        <div class="input_close_appareils">
+                            <input id="input_appareils" type="text"  value ="Rechercher un appareil">                       
+                            <i class="fas fa-chevron-up" id="vert-up"></i> 
+                        </div>
+                        <div id="appareils_div">
+                        </div>
                     </div>
-                    <div class="container">
-                        <ul id="appareils"></ul>
-                    </div>
-                </div>
-            </div>
 
-            <div class="global_ustensiles">
-                <div class="btn_ustensiles">
-                    <p>Ustensiles</p>
-                    <i class="fas fa-chevron-down" id="rouge-down"></i>
-                </div>
-                <div class="liste_ustensiles">
-                    <div class="input_close">
-                        <input class="detail_ustensiles" type="search" placeholder="Rechercher un ustensile">                       
-                        <i class="fas fa-chevron-up" id="rouge-up"></i> 
+                    <div class="btn_ustensiles">
+                        <p>Ustensiles</p>
+                        <i class="fas fa-chevron-down" id="rouge-down"></i>
                     </div>
-                    <div class="container">
-                        <ul id="ustensiles"></ul>
-                    </div>
-                </div>
-            </div>
+                        <div class="liste_ustensiles">
+                            <div class="input_close_ustensiles">
+                                <input id="input_ustensiles" type="text"  value ="Rechercher un ustensile">                       
+                                <i class="fas fa-chevron-up" id="rouge-up"></i> 
+                            </div>
+                            <div id="ustensiles_div">
+                            </div>
+                        </div>
         </section>
 
         <section class="cartes_recettes">
 
         </section>
-
     </main>
     <script src="data/recipes.js"></script>
     <script src="scripts/detail_recette.js"></script>

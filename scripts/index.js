@@ -1,13 +1,9 @@
 
-const ulIngredients = document.getElementById("ingredients");
-const ulAppareils = document.getElementById("appareils");
-const ulUstensiles = document.getElementById("ustensiles");
 
 function displayListe (recette) {
-    const creaDataListe = new dataRecherche(recette);
-    const creaIngredient = creaDataListe.creaIngredientsDom(recette);
-    const creaUstensile = creaDataListe.creaUstensilesDom(recette);
-    const creaAppareil = creaDataListe.creaAppareilsDom(recette);
+    creaIngredientsDom(recette);
+    const creaUstensile = creaUstensilesDom(recette);
+    const creaAppareil = creaAppareilsDom(recette);
 
     //ulIngredients.appendChild(creaIngredient);
     //ulUstensiles.appendChild(creaUstensile);
@@ -28,8 +24,8 @@ function displayRecette (recettes) {
 
 function init () {
     const recette = recipes;
-    displayListe(recette);
     displayRecette(recette);
+    displayListe(recette)
 }
 
 init ();
