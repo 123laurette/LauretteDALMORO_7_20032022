@@ -9,7 +9,6 @@
         });
 
         tabIngredients = [...new Set (tabIngredients)].sort();//Je trie pour supp les doublons
-            console.log(tabIngredients);
 
         //........je crée un li pour chaque element.............
         const ingredientsDiv = document.getElementById("ingredients_div");

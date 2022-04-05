@@ -20,10 +20,11 @@
 
         <div class="barre_recherche">
             <form method="post" action="traitement.php">
-                <input class="barre_champ" type="search" value="Rechercher une recette ou un ingrédient"/>
+                <input id="barre_champ" type="search" placeholder="Rechercher une recette ou un ingrédient"/>
             </form>
             <i class="fas fa-search"></i>
         </div>
+        <div id = listeSuggestions></div>
 
     </header>
 
@@ -37,7 +38,7 @@
 
             <div class="global_ingredients">
                 <div class="btn_ingredients">
-                    <p>Ingredients</p>
+                    <h2>Ingredients</h2>
                     <i class="fas fa-chevron-down" id="ingredients-down"></i>
                 </div>
                 <div class="liste_ingredients">
@@ -53,7 +54,7 @@
 
             <div class="global_appareils">
                 <div class="btn_appareils">
-                    <p>Appareils</p>
+                    <h2>Appareils</h2>
                     <i class="fas fa-chevron-down" id="appareils-down"></i>
                 </div>
                 <div class="liste_appareils">
@@ -69,7 +70,7 @@
 
             <div class="global_ustensiles">
                 <div class="btn_ustensiles">
-                    <p>Ustensiles</p>
+                    <h2>Ustensiles</h2>
                     <i class="fas fa-chevron-down" id="ustensiles-down"></i>
                 </div>
                 <div class="liste_ustensiles">
@@ -91,7 +92,8 @@
     </main>
     <script src="data/recipes.js"></script>
     <script src="scripts/detail_recette.js"></script>
-    <script src="scripts/menu_recherche.js"></script>
+    <script src="scripts/liste_menu_recherche.js"></script>
+    <script src="scripts/algo_recherche.js"></script>
     <script src="scripts/index.js"></script>
 </body>
 </html>
