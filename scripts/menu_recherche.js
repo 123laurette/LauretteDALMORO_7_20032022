@@ -101,8 +101,8 @@ openBleu.addEventListener("click", openListeIngredients);
 function openListeIngredients(){
     openBleu.style.display = "none";
     openListeBleu.style.display = "block";
-    btnVert.style.transform = "translateX(200px)";
-    btnRouge.style.transform = "translateX(200px)";
+    btnVert.style.transform = "translateX(350px)";
+    btnRouge.style.transform = "translateX(300px)";
 
 }
 openVert.addEventListener("click", openListeAppareils);
@@ -110,7 +110,7 @@ openVert.addEventListener("click", openListeAppareils);
 function openListeAppareils(){
     openVert.style.display = "none";
     openListeVert.style.display = "block";
-    btnRouge.style.transform = "translateX(470px)";
+    btnRouge.style.transform = "translateX(370px)";
 
 } 
 openRouge.addEventListener("click", openListeUstensiles);
