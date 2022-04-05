@@ -19,13 +19,14 @@
         <img src="assets/logo.png" id="logo" alt="logo de la page d'accueil" tabindex="1"/>
 
         <div class="barre_recherche">
-        <form method="post" action="traitement.php">
-            <input class="barre_champ" type="search" value="Rechercher une recette ou un ingrédient"/>
-        </form>
-        <i class="fas fa-search"></i>
+            <form method="post" action="traitement.php">
+                <input class="barre_champ" type="search" value="Rechercher une recette ou un ingrédient"/>
+            </form>
+            <i class="fas fa-search"></i>
         </div>
 
     </header>
+
     <main>
         <aside class="champ_mot_cle">
             <div class="mot_cle"></div>
@@ -33,48 +34,55 @@
         </aside>
 
         <section class="menu_recherche">
+
             <div class="global_ingredients">
-            <div class="btn_ingredients">
-                <p>Ingredients</p>
-                <i class="fas fa-chevron-down" id="bleu-down"></i>
-            </div>
+                <div class="btn_ingredients">
+                    <p>Ingredients</p>
+                    <i class="fas fa-chevron-down" id="ingredients-down"></i>
+                </div>
                 <div class="liste_ingredients">
                     <div class="input_close_ingredients">
                         <input id="input_ingredients" type="text"  value ="Rechercher un ingrédient">                       
-                        <i class="fas fa-chevron-up" id="bleu-up"></i> 
+                        <i class="fas fa-chevron-up" id="ingredients-up"></i> 
                     </div>
                     <div id="ingredients_div">
+
                     </div>
                 </div>
-</div>
+            </div>
+
             <div class="global_appareils">
                 <div class="btn_appareils">
                     <p>Appareils</p>
-                    <i class="fas fa-chevron-down" id="vert-down"></i>
+                    <i class="fas fa-chevron-down" id="appareils-down"></i>
                 </div>
-                    <div class="liste_appareils">
-                        <div class="input_close_appareils">
-                            <input id="input_appareils" type="text"  value ="Rechercher un appareil">                       
-                            <i class="fas fa-chevron-up" id="vert-up"></i> 
-                        </div>
-                        <div id="appareils_div">
-                        </div>
+                <div class="liste_appareils">
+                    <div class="input_close_appareils">
+                        <input id="input_appareils" type="text"  value ="Rechercher un appareil">                       
+                        <i class="fas fa-chevron-up" id="appareils-up"></i> 
                     </div>
-</div>
-<div class="global_ustensiles">
-                    <div class="btn_ustensiles">
-                        <p>Ustensiles</p>
-                        <i class="fas fa-chevron-down" id="rouge-down"></i>
+                    <div id="appareils_div">
+
                     </div>
-                        <div class="liste_ustensiles">
-                            <div class="input_close_ustensiles">
-                                <input id="input_ustensiles" type="text"  value ="Rechercher un ustensile">                       
-                                <i class="fas fa-chevron-up" id="rouge-up"></i> 
-                            </div>
-                            <div id="ustensiles_div">
-                            </div>
-                        </div>
-                        </div>
+                </div>
+            </div>
+
+            <div class="global_ustensiles">
+                <div class="btn_ustensiles">
+                    <p>Ustensiles</p>
+                    <i class="fas fa-chevron-down" id="ustensiles-down"></i>
+                </div>
+                <div class="liste_ustensiles">
+                    <div class="input_close_ustensiles">
+                        <input id="input_ustensiles" type="text"  value ="Rechercher un ustensile">                       
+                        <i class="fas fa-chevron-up" id="ustensiles-up"></i> 
+                    </div>
+                    <div id="ustensiles_div">
+
+                    </div>
+                </div>
+            </div>
+
         </section>
 
         <section class="cartes_recettes">

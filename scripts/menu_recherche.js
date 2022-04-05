@@ -1,9 +1,4 @@
-
-
-
-
-// ......INGREDIENTS PUSH ARRAY, SUPP DOUBLONS ET TRIE, CREA LI PAR ELEMENT.....
-
+// ......INGREDIENTS PUSH ARRAY, SUPP DOUBLONS ET TRIE, CREA UL ET LI PAR ELEMENT.....
     function creaIngredientsDom(recettes) {
         let tabIngredients = [];
 
@@ -12,8 +7,10 @@
                 tabIngredients.push(ingredient.ingredient);//Je fais mon tableau
             });
         });
+
         tabIngredients = [...new Set (tabIngredients)].sort();//Je trie pour supp les doublons
             console.log(tabIngredients);
+
         //........je crée un li pour chaque element.............
         const ingredientsDiv = document.getElementById("ingredients_div");
         let ulIngredients = document.createElement("ul");
@@ -24,8 +21,8 @@
             liIngredients.value = ingredient;
             ulIngredients.appendChild(liIngredients);
         });
-        ingredientsDiv.appendChild(ulIngredients);
 
+        ingredientsDiv.appendChild(ulIngredients);
     }
 
 
@@ -51,11 +48,11 @@
             liUstensile.value = ustensile;
             ulustensiles.appendChild(liUstensile);
         });
+
         ustensilesDiv.appendChild(ulustensiles);        
     }
 
     // ......APPAREILS PUSH ARRAY, SUPP DOUBLONS ET TRIE, CREA LI PAR ELEMENT.....
-
     function creaAppareilsDom(recettes) {
         let tabAppareils = [];
         
@@ -75,8 +72,8 @@
             liAppareil.value = appareil;
             ulappareils.appendChild(liAppareil);
         });
+
         appareilsDiv.appendChild(ulappareils);        
-        
     }
 
 
@@ -85,66 +82,82 @@
 
 
 //OUVERTURE DES LISTES
-const openBleu = document.getElementById("bleu-down");
-const openVert = document.getElementById("vert-down");
-const openRouge = document.getElementById("rouge-down");
-const btnVert = document.querySelector(".btn_appareils");
-const btnRouge = document.querySelector(".btn_ustensiles");
+const openBtnIngredient = document.getElementById("ingredients-down");
+const openBtnAppareil = document.getElementById("appareils-down");
+const openBtnUstensile = document.getElementById("ustensiles-down");
+const btnIngredient = document.querySelector(".btn_ingredients");
+const btnAppareil = document.querySelector(".btn_appareils");
+const btnUstensile = document.querySelector(".btn_ustensiles");
 
 
-const openListeBleu = document.querySelector(".liste_ingredients");
-const openListeVert = document.querySelector(".liste_appareils");
-const openListeRouge= document.querySelector(".liste_ustensiles");
+const ListeIngredients = document.querySelector(".liste_ingredients");
+const ListeAppareils = document.querySelector(".liste_appareils");
+const ListeUstensiles= document.querySelector(".liste_ustensiles");
 
-openBleu.addEventListener("click", openListeIngredients);
+openBtnIngredient.addEventListener("click", openListeIngredients);
 
 function openListeIngredients(){
-    openBleu.style.display = "none";
-    openListeBleu.style.display = "block";
-    btnVert.style.transform = "translateX(350px)";
-    btnRouge.style.transform = "translateX(300px)";
-
+    openBtnIngredient.style.display = "none";
+    ListeIngredients.style.display = "block";
+    ListeAppareils.style.display = "none";
+    ListeUstensiles.style.display = "none";
+    openBtnAppareil.style.display = "block";
+    openBtnUstensile.style.display = "block";
+    btnAppareil.style.transform = "translateX(350px)";
+    btnUstensile.style.transform = "translateX(300px)";
 }
-openVert.addEventListener("click", openListeAppareils);
+
+openBtnAppareil.addEventListener("click", openListeAppareils);
 
 function openListeAppareils(){
-    openVert.style.display = "none";
-    openListeVert.style.display = "block";
-    btnRouge.style.transform = "translateX(370px)";
+    openBtnAppareil.style.display = "none";
+    ListeAppareils.style.display = "block";
+    ListeIngredients.style.display = "none";
+    ListeUstensiles.style.display = "none";
+    openBtnIngredient.style.display = "block";
+    openBtnUstensile.style.display = "block";
+    btnUstensile.style.transform = "translateX(370px)";
+    btnAppareil.style.transform = "translateX(0px)";
+}
 
-} 
-openRouge.addEventListener("click", openListeUstensiles);
+openBtnUstensile.addEventListener("click", openListeUstensiles);
 
 function openListeUstensiles(){
-    openRouge.style.display = "none";
-    openListeRouge.style.display = "block";
+    openBtnUstensile.style.display = "none";
+    ListeUstensiles.style.display = "block";
+    ListeIngredients.style.display = "none";
+    ListeAppareils.style.display = "none";
+    openBtnIngredient.style.display = "block";
+    openBtnAppareil.style.display = "block";
+    btnAppareil.style.transform = "translateX(-10px)";
 }
     
     
 //FERMETURE DES LISTES
-const closeBleu = document.getElementById("bleu-up");
-const closeVert = document.getElementById("vert-up");
-const closeRouge = document.getElementById("rouge-up");
+const closeIngredient = document.getElementById("ingredients-up");
+const closeAppareil = document.getElementById("appareils-up");
+const closeUstensile = document.getElementById("ustensiles-up");
 
-closeBleu.addEventListener("click", closeListeIngredients);
-closeVert.addEventListener("click", closeListeAppareils);
-closeRouge.addEventListener("click", closeListeUstensiles);
+closeIngredient.addEventListener("click", closeListeIngredients);
+closeAppareil.addEventListener("click", closeListeAppareils);
+closeUstensile.addEventListener("click", closeListeUstensiles);
 
 function closeListeIngredients(){
-    openBleu.style.display = "block";
-    openListeBleu.style.display = "none"; 
-    btnVert.style.transform = "translateX(0)";
-    btnRouge.style.transform = "translateX(0)"; 
+    openBtnIngredient.style.display = "block";
+    ListeIngredients.style.display = "none"; 
+    btnAppareil.style.transform = "translateX(0)";
+    btnUstensile.style.transform = "translateX(0)"; 
 }
 function closeListeAppareils(){
-    openVert.style.display = "block";
-    openListeVert.style.display = "none";
-    btnRouge.style.transform = "translateX(0)";
+    openBtnAppareil.style.display = "block";
+    ListeAppareils.style.display = "none";
+    btnUstensile.style.transform = "translateX(0)";
 
 }
 function closeListeUstensiles(){
-    openRouge.style.display = "block";
-    openListeRouge.style.display = "none";
+    openBtnUstensile.style.display = "block";
+    ListeUstensiles.style.display = "none";
+    btnUstensile.style.transform = "translateX(0)";
 }
     
 

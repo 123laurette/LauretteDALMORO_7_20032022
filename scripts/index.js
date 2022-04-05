@@ -1,15 +1,8 @@
-
-
 function displayListe (recette) {
     creaIngredientsDom(recette);
-    const creaUstensile = creaUstensilesDom(recette);
-    const creaAppareil = creaAppareilsDom(recette);
-
-    //ulIngredients.appendChild(creaIngredient);
-    //ulUstensiles.appendChild(creaUstensile);
-    //ulAppareils.appendChild(creaAppareil)
+    creaUstensilesDom(recette);
+    creaAppareilsDom(recette);
 }
-
 
 const cartesRecettes = document.querySelector(".cartes_recettes");
 
