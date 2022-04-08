@@ -14,23 +14,18 @@ console.log (inputBarre);
 
 //recupérer toutes les recettes
 recettes = recipes;
-recettes.forEach(recette => {
-    const creaFiltreRecette = new dataRecettes(recette);
+    recettes.forEach(recette => {
+        const creaFiltreRecette = new dataRecettes(recette);
 
-//comparer et filtrer le champ de recherche avec toutes les recettes
-    if (creaFiltreRecette.name.toLowerCase().includes(inputBarre));
-    const resultat = [];
-    resultat.push(recette.name);
-    console.log(resultat);
+    //comparer et filtrer le champ de recherche avec toutes les recettes
+        creaFiltreRecette.name.forEach(name => {
+            const resultat = name.toLowerCase().includes(inputBarre);
+            console.log(resultat);
+        })
 
-});
-
-
-
-
-
-//afficher le résultat du filtre
-
+    //afficher le résultat du filtre
+    
+    });
 
 }
 

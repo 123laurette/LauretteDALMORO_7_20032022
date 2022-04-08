@@ -1,18 +1,18 @@
 .cartes_recettes {
     display: flex;
-    width: 90%;
+    width: 100%;
     height: auto;
-    margin-left: 100px;
+    padding-left: 100px;
     margin-top: 50px;
     flex-wrap: wrap;
-    border: red solid;
+    align-items: flex-start;
 }
     .carte_recette {
         display: flex;
         flex-direction: column;
         width: 30%;
         height: 400px;
-        margin-right: 55px;
+        margin-right: 50px;
         margin-bottom: 50px;
         background-color: #e7e7e7;
         border-radius: 0 0 5px 5px;
