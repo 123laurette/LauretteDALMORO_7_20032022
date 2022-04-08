@@ -1,22 +1,42 @@
+//cibler le champ de recherche
 const barreChamp = document.getElementById("barre_champ");
 
+//créer l'évènement pour écouter la frappe des lettres par l'utilisateur
 barreChamp.addEventListener("keyup", barreDeRecherche);
 
+//creation de la fonction qui va mettre en place l'écoute et le resultat de l'écoute
+
 function barreDeRecherche(recettes){
-    const dataRecherche = new dataRecettes(recettes);
-    const inputBarre = barreChamp.value;
-    console.log(inputBarre);
 
-    const resultat = [recettes.key].filter(recette => recette.dataRecherche.toLocaleLowerCase().includes(inputBarre.toLocaleLowerCase()));
+//recuperer la valeur tapé
+const inputBarre = barreChamp.value;
+console.log (inputBarre);
 
-    let suggestion = "";
-    if(inputBarre != "") {
-        resultat.forEach(element => {
-            const divSuggestion = document.createElement("div");
-            divSuggestion.className = "resultat_choix";
-            divSuggestion.textContent = $(element.this.name);
-        });
-    }
-        document.getElementById("listeSuggestions").innerHTML = suggestion;
+//recupérer toutes les recettes
+recettes = recipes;
+recettes.forEach(recette => {
+    const creaFiltreRecette = new dataRecettes(recette);
+
+//comparer et filtrer le champ de recherche avec toutes les recettes
+    if (creaFiltreRecette.name.toLowerCase().includes(inputBarre));
+    const resultat = [];
+    resultat.push(recette.name);
+    console.log(resultat);
+
+});
+
+
+
+
+
+//afficher le résultat du filtre
+
+
 }
+
+
+
+
+
+
 
