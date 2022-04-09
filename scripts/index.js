@@ -1,7 +1,6 @@
 function displayListe (recette) {
-    creaIngredientsDom(recette);
-    creaUstensilesDom(recette);
-    creaAppareilsDom(recette);
+    creaListeFiltre(recette);
+    creaListeDom();
 }
 
 const cartesRecettes = document.querySelector(".cartes_recettes");
