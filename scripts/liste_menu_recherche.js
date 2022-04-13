@@ -29,6 +29,7 @@ function creaListeDom(){
 
     tabIngredients.forEach(ingredient => {
         const liIngredients = document.createElement("li");
+        liIngredients.classList.add("li_ingredients");
         liIngredients.innerHTML = ingredient;
         liIngredients.value = ingredient;
         ulIngredients.appendChild(liIngredients);

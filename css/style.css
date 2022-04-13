@@ -39,7 +39,7 @@
         margin-right: 30px;
         font-size: 25px;
     }
-.champ_mot_cle {
+.champ_mot_cle  {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -50,17 +50,22 @@
     margin-left: 100px;
     margin-top: 20px;
 }
-    .mot_cle {
-        color: white;
-        font-size: 20px;
+    li.mot_cle {
+        display: flex;
+        align-items: center;
         border: white solid;
-        width: 70px;
-        height: 20px;
-        margin-right: 5px;
-    }
-    .champ_mot_cle i {
         color: white;
         font-size: 20px;
+        width: 90px;
+        height: 30px;
+        margin-right: 5px;
+        list-style-type: none; 
+
+    }
+    .mot_cle i {
+        color: white;
+        font-size: 20px;
+        margin-left: 60px;
     }
 
 /*......................BOUTON DE FILTRE....................*/    
@@ -152,4 +157,5 @@
                         margin-bottom: 10px;
                         font-size: 16px;
                         list-style-type: none; 
+                        cursor: pointer;
                     }
