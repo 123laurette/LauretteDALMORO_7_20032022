@@ -1,4 +1,4 @@
-//RECHERCHE AVEC BOUTON FILTRE
+/*//RECHERCHE AVEC BOUTON FILTRE
 const liIngredients = document.querySelectorAll(".li_ingredients");
 const tagLiIngredients = document.querySelector(".mot_cle");
 let tagIng = [];
@@ -16,7 +16,7 @@ function tag(){
 }
 
 tag();
-
+*/
 
 
 
