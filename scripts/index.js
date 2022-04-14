@@ -22,13 +22,6 @@ function init () {
 
 init ();
 
-/*let barreResultat = document.querySelector(".resultat_recherche");
 
-function displayResultRecherche(recettes) {
-        const creaResultatRecherche = creaFiltreRecette.creaCarteDom();
-        barreResultat.appendChild(creaResultatRecherche);
-})
-}
-displayResultRecherche();
-*/
+
 
