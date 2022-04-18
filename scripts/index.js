@@ -1,6 +1,9 @@
 function displayListe (recette) {
     creaListeFiltre(recette);
-    creaListeDom();
+    creaListeDom(tabIngredients, "ingredients");
+    creaListeDom(tabAppareils,  "appareils");
+    creaListeDom(tabUstensiles,  "ustensiles");
+
 }
 
 const cartesRecettes = document.querySelector(".cartes_recettes");

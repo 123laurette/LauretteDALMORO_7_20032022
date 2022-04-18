@@ -1,4 +1,4 @@
-//RECHERCHE AVEC BOUTON FILTRE
+/*//RECHERCHE AVEC BOUTON FILTRE
 
 //verif que mon tableau d'ingredients est bien présent
 console.log(tabIngredients);
@@ -28,6 +28,7 @@ tag();
 
 //RECHERCHE AVEC BARRE PRINCIPALE
 
+
 //cibler le champ de recherche
 const barreChamp = document.getElementById("barre_champ");
 
@@ -53,4 +54,4 @@ function filtreDeRecherche(recettes){
         );
         creaCarteDom(resultat);
     });
-}
+}*/

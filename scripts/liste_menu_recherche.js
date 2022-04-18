@@ -2,7 +2,7 @@ let tabIngredients = [];
 let tabUstensiles = [];
 let tabAppareils = [];
 
-// ......LISTES INPUT PUSH ARRAY, SUPP DOUBLONS ET TRIE.....
+// ......LISTES INPUT, PUSH ARRAY, SUPP DOUBLONS ET TRIE.....
 function creaListeFiltre(recettes) {
     recettes.forEach(recette => {
         //Je fais mon tableau
@@ -21,42 +21,23 @@ function creaListeFiltre(recettes) {
     tabAppareils = [...new Set (tabAppareils)].sort();
 }
 
-function creaListeDom(){
-    //........je crée un UL et des LI pour chaque element.............
-    const ingredientsDiv = document.getElementById("ingredients_div");
-    let ulIngredients = document.createElement("ul");
-    ulIngredients.id = "ingredients";
+function creaListeDom(tabTag, id){
+    //........je crée un UL et des LI generique.............
+    const divListe = document.getElementById(id + "_div");
+    console.log(divListe);
 
-    tabIngredients.forEach(ingredient => {
-        const liIngredients = document.createElement("li");
-        liIngredients.classList.add("li_ingredients");
-        liIngredients.innerHTML = ingredient;
-        liIngredients.value = ingredient;
-        ulIngredients.appendChild(liIngredients);
-    });
-    ingredientsDiv.appendChild(ulIngredients);
+    const ul = document.createElement("ul");
+    ul.id = id;
 
-    const ustensilesDiv = document.getElementById("ustensiles_div");
-    let ulustensiles = document.createElement("ul");
-    ulustensiles.id = "ustensiles";
-    tabUstensiles.forEach(ustensile => {
-        const liUstensile = document.createElement("li");
-        liUstensile.innerHTML = ustensile;
-        liUstensile.value = ustensile;
-        ulustensiles.appendChild(liUstensile);
-    });
-    ustensilesDiv.appendChild(ulustensiles);  
+    divListe.appendChild(ul);
 
-    const appareilsDiv = document.getElementById("appareils_div");
-    let ulappareils = document.createElement("ul");
-    ulappareils.id = "appareils";
-    tabAppareils.forEach(appareil => {
-        const liAppareil = document.createElement("li");
-        liAppareil.innerHTML = appareil;
-        liAppareil.value = appareil;
-        ulappareils.appendChild(liAppareil);
+    tabTag.forEach(el => {
+        const li = document.createElement("li");
+        li.className = "li_" + id;
+        li.innerHTML = el;
+        li.value = el;
+        ul.appendChild(li)
     });
-    appareilsDiv.appendChild(ulappareils);              
 }
 
 
