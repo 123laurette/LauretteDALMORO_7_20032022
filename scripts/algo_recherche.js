@@ -19,9 +19,7 @@ function tag(){
     })
 }
 
-tag();
-
-
+tag();*/
 
 
 
@@ -37,21 +35,54 @@ barreChamp.addEventListener("input", filtreDeRecherche);
 
 //creation de la fonction qui va mettre en place l'écoute et le resultat de l'écoute
 
-const recettes = recipes
-let resultat = [];
+const recette = recipes;
+tabName = [];
 
-function filtreDeRecherche(recettes){
-    //recuperer la valeur tapé
-    const inputBarre = barreChamp.value.toLowerCase();
-    console.log (inputBarre);
-
+//JE TRIE MES RECETTES PAR LE NOM
+function recherche(recettes) {
     recettes.forEach(recette => {
-        const creaFiltreRecette = new dataRecettes(recette);
-
-    //comparer et filtrer le champ de recherche avec toutes les recettes
-        resultat = [creaFiltreRecette.name].filter(recette => 
-            recette.toLowerCase().includes(inputBarre)
-        );
-        creaCarteDom(resultat);
+        //Je fais mon tableau
+        tabName.push(recette.name);
     });
+    //Je trie pour supp les doublons    
+    tabName = [...new Set (tabName)].sort();
+    console.log(tabName);
+}
+recherche(recette);
+
+
+
+function filtreDeRecherche() {
+     //recuperer la valeur tapé
+    inputBarre = barreChamp.value;
+    
+    if (inputBarre.length >= 3) {
+        const resultat = tabName.includes(inputBarre.value);
+        console.log(resultat);
+        
+    }
+}
+filtreDeRecherche();
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*function filtreDeRecherche(recettes) {
+     //recuperer la valeur tapé
+    const inputBarre = barreChamp.value;
+    
+    if (inputBarre.length >= 3) {
+        const resultat = recettes.filter(recette => recette.name.toLowerCase().includes(inputBarre.toLowerCase()));
+        console.log
+        
+    }
 }*/

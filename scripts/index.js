@@ -9,6 +9,7 @@ function displayListe (recette) {
 const cartesRecettes = document.querySelector(".cartes_recettes");
 
 function displayRecette (recettes) {
+    cartesRecettes.innerHTML = "";
     recettes.forEach(recette => {
         const creaData = new dataRecettes(recette);
         const creaCarte = creaData.creaCarteDom();
@@ -24,6 +25,12 @@ function init () {
 }
 
 init ();
+
+
+
+
+
+
 
 
 

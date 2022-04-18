@@ -19,12 +19,12 @@ function creaListeFiltre(recettes) {
     tabIngredients = [...new Set (tabIngredients)].sort();
     tabUstensiles = [...new Set (tabUstensiles)].sort();
     tabAppareils = [...new Set (tabAppareils)].sort();
+
 }
 
 function creaListeDom(tabTag, id){
     //........je crée un UL et des LI generique.............
     const divListe = document.getElementById(id + "_div");
-    console.log(divListe);
 
     const ul = document.createElement("ul");
     ul.id = id;
