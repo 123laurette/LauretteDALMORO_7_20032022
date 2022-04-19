@@ -26,38 +26,38 @@ const barreChamp = document.getElementById("barre_champ");
 //et mise en place du filtre
 
 barreChamp.addEventListener("input", function(){
-    recherche(recette);
-    const inputBarre = barreChamp.value;
+    recherche(recette); // j'appel ma fonction de tri nom et description
+    const inputBarre = barreChamp.value;    //je cible les caractères saisis
 
-    if (inputBarre.length >= 3) {
+    if (inputBarre.length >= 3) {   //je filtre en fonction des 3 caractères
 
         resultNameDesc = tabNameDesc.filter(el => el.toLowerCase().includes(inputBarre.toLowerCase()));
         resultIng = tabIngredients.filter(el => el.toLowerCase().includes(inputBarre.toLowerCase()));
 
-        resultat.push(resultNameDesc, resultIng)
+        resultat.push(resultNameDesc, resultIng)    //je mets dans un même tableau toutes les suggestions
         
         console.log(resultNameDesc);
         console.log(resultIng);
         console.log(resultat);
 
-    }else{};
+    }else;
 })
 
 
 //RECHERCHE AVEC BOUTON FILTRE
 
-
-
 const inputIngredients = document.getElementById("input_ingredients");
+
 inputIngredients.addEventListener("input", function(){
     const inputBarreIng = inputIngredients.value;
 
+    //Je filtre en fonction des 3 caractères saisis
     if(inputBarreIng.length >= 3) {
         const resultFiltreIng = tabIngredients.filter(el => el.toLowerCase().includes(inputBarreIng.toLowerCase()));
         console.log(resultFiltreIng);
         
         let suggestionIng = "";
-
+        //Je parcour le tableau de resultat et j'affiche les suggestions
         resultFiltreIng.forEach(el =>
             suggestionIng += `
             <li class="suggestion">${el}</li>`
@@ -67,6 +67,7 @@ inputIngredients.addEventListener("input", function(){
 })
 
 const inputAppareils = document.getElementById("input_appareils");
+
 inputAppareils.addEventListener("input", function(){
     const inputBarreApp = inputAppareils.value;
 
@@ -84,8 +85,8 @@ inputAppareils.addEventListener("input", function(){
     }
 })
 
-
 const inputUstensiles = document.getElementById("input_ustensiles");
+
 inputUstensiles.addEventListener("input", function(){
     const inputBarreUst = inputUstensiles.value;
 
@@ -105,29 +106,11 @@ inputUstensiles.addEventListener("input", function(){
 
 
 
-
-
-
-
-
-//je cible le ul des mots clés
-const champMotCle = document.querySelector(".champ_mot_cle");
-
-//fonction qui cible chaque ingredient dans le tableau des ingredients
-//au click sur l'ingredient, je crée un li et j'y insère le texte de l'ingredient cliqué
-//je supprime cet ingredient du tableau des ingrédients
-function tag(){
-    tabIngredients.forEach((ingredient) => {
-        ingredient.addEventListener("click", (e) => {
-            const tagLiIngredient = document.createElement("li");
-            tagLiIngredient.innerHTML = e.target.textContent;
-            champMotCle.appendChild(tagLiIngredient);
-            tabIngredients.delete(e.textContent);
-        })
-    })
-}
-
-tag();
+//          A FAIRE
+//  AFFICHER LE RESULTAT DU TRIE DE LA BARRE PRINCIPALE
+//  FONCTION AFFICHER L'ELEMENT SELECTIONNE DANS LES TAGS
+//  FAIRE UN RESET DES ECOUTEURS, DES CHAMPS DE SAISIS ET DE L'HISTORIQUE
+//  FAIRE NE SORTE QUE LES ACCENTS NE BLOQUENT RIEN
 
 
 
@@ -140,15 +123,22 @@ tag();
 
 
 
-/*function filtreDeRecherche(recettes) {
-     //recuperer la valeur tapé
-    const inputBarre = barreChamp.value;
-    
-    if (inputBarre.length >= 3) {
-        const resultat = recettes.filter(recette => recette.name.toLowerCase().includes(inputBarre.toLowerCase()));
-        console.log
-        
-    }
-}*/
+/*suggestionIng.addEventListener("click", (el) =>{
+    //je cible le ul des mots clés
+    const champMotCle = document.querySelector(".champ_mot_cle");
+
+    const tagLiIngredient = `<li class="suggestion">${el}</li>`
+    document.getElementsByClassName("champ_mot_cle").innerHTML = tagLiIngredient;
+
+})*/
+
+
+
+
+
+
+
+
+
 
 
