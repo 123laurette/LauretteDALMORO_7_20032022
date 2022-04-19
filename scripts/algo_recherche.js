@@ -47,6 +47,8 @@ barreChamp.addEventListener("input", function(){
 //RECHERCHE AVEC BOUTON FILTRE
 
 const inputIngredients = document.getElementById("input_ingredients");
+let suggestionIng = "";
+
 
 inputIngredients.addEventListener("input", function(){
     const inputBarreIng = inputIngredients.value;
@@ -56,17 +58,18 @@ inputIngredients.addEventListener("input", function(){
         const resultFiltreIng = tabIngredients.filter(el => el.toLowerCase().includes(inputBarreIng.toLowerCase()));
         console.log(resultFiltreIng);
         
-        let suggestionIng = "";
         //Je parcour le tableau de resultat et j'affiche les suggestions
         resultFiltreIng.forEach(el =>
             suggestionIng += `
-            <li class="suggestion">${el}</li>`
+            <li class="li_ingredients">${el}</li>`
         )
         document.getElementById("ingredients").innerHTML = suggestionIng;
     }
 })
 
 const inputAppareils = document.getElementById("input_appareils");
+let suggestionApp = "";
+
 
 inputAppareils.addEventListener("input", function(){
     const inputBarreApp = inputAppareils.value;
@@ -75,17 +78,18 @@ inputAppareils.addEventListener("input", function(){
         const resultFiltreApp = tabAppareils.filter(el => el.toLowerCase().includes(inputBarreApp.toLowerCase()));
         console.log(resultFiltreApp);
 
-        let suggestionApp = "";
 
         resultFiltreApp.forEach(el =>
             suggestionApp += `
-            <li class="suggestion">${el}</li>`
+            <li class="li_appareils">${el}</li>`
         )
         document.getElementById("appareils").innerHTML = suggestionApp;
     }
 })
 
 const inputUstensiles = document.getElementById("input_ustensiles");
+let suggestionust = "";
+
 
 inputUstensiles.addEventListener("input", function(){
     const inputBarreUst = inputUstensiles.value;
@@ -94,11 +98,10 @@ inputUstensiles.addEventListener("input", function(){
         const resultFiltreUst = tabUstensiles.filter(el => el.toLowerCase().includes(inputBarreUst.toLowerCase()));
         console.log(resultFiltreUst);
 
-        let suggestionust = "";
 
         resultFiltreUst.forEach(el =>
             suggestionust += `
-            <li class="suggestion">${el}</li>`
+            <li class="li_ustensiles">${el}</li>`
         )
         document.getElementById("ustensiles").innerHTML = suggestionust;
     }
@@ -107,7 +110,7 @@ inputUstensiles.addEventListener("input", function(){
 
 
 //          A FAIRE
-//  AFFICHER LE RESULTAT DU TRIE DE LA BARRE PRINCIPALE
+//  AFFICHER LE RESULTAT DU TRIE DE LA BARRE
 //  FONCTION AFFICHER L'ELEMENT SELECTIONNE DANS LES TAGS
 //  FAIRE UN RESET DES ECOUTEURS, DES CHAMPS DE SAISIS ET DE L'HISTORIQUE
 //  FAIRE NE SORTE QUE LES ACCENTS NE BLOQUENT RIEN
@@ -115,18 +118,9 @@ inputUstensiles.addEventListener("input", function(){
 
 
 
+/*let liIngredient = document .querySelectorAll(".li_ingredients");
 
-
-
-
-
-
-
-
-/*suggestionIng.addEventListener("click", (el) =>{
-    //je cible le ul des mots clés
-    const champMotCle = document.querySelector(".champ_mot_cle");
-
+liIngredient.addEventListener("click", (el) =>{
     const tagLiIngredient = `<li class="suggestion">${el}</li>`
     document.getElementsByClassName("champ_mot_cle").innerHTML = tagLiIngredient;
 
