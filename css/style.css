@@ -39,7 +39,7 @@
         margin-right: 30px;
         font-size: 25px;
     }
-.champ_mot_cle  {
+#champ_mot_cle  {
     display: flex;
     align-items: center;
     justify-content: center;

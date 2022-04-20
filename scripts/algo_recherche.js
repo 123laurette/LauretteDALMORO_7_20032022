@@ -1,4 +1,26 @@
-//RECHERCHE AVEC BARRE PRINCIPALE
+/*const barreChamp = document.getElementById("barre_champ");
+
+barreChamp.addEventListener("input", (filtreDeRecherche));
+
+const recettes = recipes;
+let resultat = [];
+
+function filtreDeRecherche(recettes) {
+    const inputBarre = barreChamp.value;
+    if (inputBarre.length >= 3){
+        resultat = recettes.filter(recette => recette.name.toLowerCase().includes(inputBarre.toLowerCase()));
+        recettes = resultat;
+        displayRecette();
+    }
+    
+}   //cette fonction ressort une erreure en console
+    //recettes.filter n'est pas une fonction !!!*/
+
+
+
+
+
+//              RECHERCHE AVEC BARRE PRINCIPALE
 //creation de la fonction qui va mettre en place l'écoute et le resultat de l'écoute
 
 let recette = recipes;
@@ -39,12 +61,11 @@ barreChamp.addEventListener("input", function(){
         console.log(resultNameDesc);
         console.log(resultIng);
         console.log(resultat);
-
-    }else;
+    }else{}
 })
 
 
-//RECHERCHE AVEC BOUTON FILTRE
+//              RECHERCHE AVEC BOUTON FILTRE
 
 const inputIngredients = document.getElementById("input_ingredients");
 let suggestionIng = "";
@@ -64,7 +85,7 @@ inputIngredients.addEventListener("input", function(){
             <li class="li_ingredients">${el}</li>`
         )
         document.getElementById("ingredients").innerHTML = suggestionIng;
-    }
+    }else{}
 })
 
 const inputAppareils = document.getElementById("input_appareils");
@@ -84,7 +105,7 @@ inputAppareils.addEventListener("input", function(){
             <li class="li_appareils">${el}</li>`
         )
         document.getElementById("appareils").innerHTML = suggestionApp;
-    }
+    }else{}
 })
 
 const inputUstensiles = document.getElementById("input_ustensiles");
@@ -104,7 +125,7 @@ inputUstensiles.addEventListener("input", function(){
             <li class="li_ustensiles">${el}</li>`
         )
         document.getElementById("ustensiles").innerHTML = suggestionust;
-    }
+    }else{}
 })
 
 
@@ -114,6 +135,10 @@ inputUstensiles.addEventListener("input", function(){
 //  FONCTION AFFICHER L'ELEMENT SELECTIONNE DANS LES TAGS
 //  FAIRE UN RESET DES ECOUTEURS, DES CHAMPS DE SAISIS ET DE L'HISTORIQUE
 //  FAIRE NE SORTE QUE LES ACCENTS NE BLOQUENT RIEN
+//  QUAND JE TAPE PLUS DE 3 CARACTERES LA CONSOLE ME RETOURNE PLUSIEUS FOIS LES MËMES SUGGESTIONS
+
+
+
 
 
 
@@ -122,7 +147,7 @@ inputUstensiles.addEventListener("input", function(){
 
 liIngredient.addEventListener("click", (el) =>{
     const tagLiIngredient = `<li class="suggestion">${el}</li>`
-    document.getElementsByClassName("champ_mot_cle").innerHTML = tagLiIngredient;
+    document.getElementsById("champ_mot_cle").innerHTML = tagLiIngredient;
 
 })*/
 
