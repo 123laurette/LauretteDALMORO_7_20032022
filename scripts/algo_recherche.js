@@ -1,6 +1,3 @@
-
-//              RECHERCHE AVEC BARRE PRINCIPALE
-//creation de la fonction qui va mettre en place l'écoute et le resultat de l'écoute
 const barreChamp = document.getElementById("barre_champ");
 
 let recettes = recipes;
@@ -9,12 +6,15 @@ let resultat = [];
 barreChamp.addEventListener("input", function (recette){
     const inputBarre = barreChamp.value;
     if (inputBarre.length >= 3){
-        resultat = recettes.filter(recette => recette.name.toLowerCase().includes(inputBarre.toLowerCase()) || recette.description.toLowerCase().includes(inputBarre.toLowerCase()));
+        
+        resultat = recettes.filter(recette => recette.name.toLowerCase().includes(inputBarre.toLowerCase()) || recette.description.toLowerCase().includes(inputBarre.toLowerCase()) || 
+        recette.ingredients.forEach ((ingredient) => {ingredient.ingredient.toLowerCase().includes(inputBarre.toLowerCase())}));
     }
     recette = resultat;
     displayRecette(recette);
-    
 })  
+
+
 
 
 
