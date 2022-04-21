@@ -1,11 +1,10 @@
 const barreChamp = document.getElementById("barre_champ");
 
-barreChamp.addEventListener("input", (filtreDeRecherche));
 
-let recette = recipes;
+let recettes = recipes;
 let resultat = [];
 
-function filtreDeRecherche(recettes) {
+barreChamp.addEventListener("input", function (){
     const inputBarre = barreChamp.value;
     if (inputBarre.length >= 3){
         resultat = recettes.filter(recette => recette.name.toLowerCase().includes(inputBarre.toLowerCase()));
@@ -13,7 +12,7 @@ function filtreDeRecherche(recettes) {
     recette = resultat;
     displayRecette(recette);
     
-}   //cette fonction ressort une erreure en console
+})   //cette fonction ressort une erreure en console
     //recettes.filter n'est pas une fonction !!!
 
 
