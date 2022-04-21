@@ -21,7 +21,7 @@ function displayRecette (recettes) {
 function init () {
     const recette = recipes;
     displayRecette(recette);
-    displayListe(recette)
+    displayListe(recette);
 }
 
 init ();

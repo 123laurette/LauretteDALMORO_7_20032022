@@ -1,26 +1,26 @@
-/*const barreChamp = document.getElementById("barre_champ");
+const barreChamp = document.getElementById("barre_champ");
 
 barreChamp.addEventListener("input", (filtreDeRecherche));
 
-const recettes = recipes;
+let recette = recipes;
 let resultat = [];
 
 function filtreDeRecherche(recettes) {
     const inputBarre = barreChamp.value;
     if (inputBarre.length >= 3){
         resultat = recettes.filter(recette => recette.name.toLowerCase().includes(inputBarre.toLowerCase()));
-        recettes = resultat;
-        displayRecette();
     }
+    recette = resultat;
+    displayRecette(recette);
     
 }   //cette fonction ressort une erreure en console
-    //recettes.filter n'est pas une fonction !!!*/
+    //recettes.filter n'est pas une fonction !!!
 
 
 
 
 
-//              RECHERCHE AVEC BARRE PRINCIPALE
+/*//              RECHERCHE AVEC BARRE PRINCIPALE
 //creation de la fonction qui va mettre en place l'écoute et le resultat de l'écoute
 
 let recette = recipes;
@@ -143,7 +143,7 @@ inputUstensiles.addEventListener("input", function(){
 
 
 
-/*let liIngredient = document .querySelectorAll(".li_ingredients");
+let liIngredient = document .querySelectorAll(".li_ingredients");
 
 liIngredient.addEventListener("click", (el) =>{
     const tagLiIngredient = `<li class="suggestion">${el}</li>`
