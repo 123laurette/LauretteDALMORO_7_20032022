@@ -1,10 +1,12 @@
-const barreChamp = document.getElementById("barre_champ");
 
+//              RECHERCHE AVEC BARRE PRINCIPALE
+//creation de la fonction qui va mettre en place l'écoute et le resultat de l'écoute
+const barreChamp = document.getElementById("barre_champ");
 
 let recettes = recipes;
 let resultat = [];
 
-barreChamp.addEventListener("input", function (){
+barreChamp.addEventListener("input", function (recette){
     const inputBarre = barreChamp.value;
     if (inputBarre.length >= 3){
         resultat = recettes.filter(recette => recette.name.toLowerCase().includes(inputBarre.toLowerCase()));
@@ -12,56 +14,9 @@ barreChamp.addEventListener("input", function (){
     recette = resultat;
     displayRecette(recette);
     
-})   //cette fonction ressort une erreure en console
-    //recettes.filter n'est pas une fonction !!!
+})  
 
 
-
-
-
-/*//              RECHERCHE AVEC BARRE PRINCIPALE
-//creation de la fonction qui va mettre en place l'écoute et le resultat de l'écoute
-
-let recette = recipes;
-tabNameDesc = [];
-
-//JE TRIE MES RECETTES PAR LE NOM ET PAR LA DESCRIPTION
-function recherche(recettes) {
-    recettes.forEach(recette => {
-        //Je fais mon tableau
-        tabNameDesc.push(recette.name, recette.description);
-    });
-    //Je trie pour supp les doublons    
-    tabNameDesc = [...new Set (tabNameDesc)];
-}
-
-let resultNameDesc = "";
-let resultIng = "";
-let resultat = [];
-
-//cibler le champ de recherche
-const barreChamp = document.getElementById("barre_champ");
-
-
-//créer l'évènement pour écouter la frappe des lettres par l'utilisateur
-//et mise en place du filtre
-
-barreChamp.addEventListener("input", function(){
-    recherche(recette); // j'appel ma fonction de tri nom et description
-    const inputBarre = barreChamp.value;    //je cible les caractères saisis
-
-    if (inputBarre.length >= 3) {   //je filtre en fonction des 3 caractères
-
-        resultNameDesc = tabNameDesc.filter(el => el.toLowerCase().includes(inputBarre.toLowerCase()));
-        resultIng = tabIngredients.filter(el => el.toLowerCase().includes(inputBarre.toLowerCase()));
-
-        resultat.push(resultNameDesc, resultIng)    //je mets dans un même tableau toutes les suggestions
-        
-        console.log(resultNameDesc);
-        console.log(resultIng);
-        console.log(resultat);
-    }else{}
-})
 
 
 //              RECHERCHE AVEC BOUTON FILTRE
@@ -130,7 +85,6 @@ inputUstensiles.addEventListener("input", function(){
 
 
 //          ***********A FAIRE****************
-//  AFFICHER LE RESULTAT DU TRIE DE LA BARRE PRINCIPALE
 //  FONCTION AFFICHER L'ELEMENT SELECTIONNE DANS LES TAGS
 //  FAIRE UN RESET DES ECOUTEURS, DES CHAMPS DE SAISIS ET DE L'HISTORIQUE
 //  FAIRE NE SORTE QUE LES ACCENTS NE BLOQUENT RIEN
@@ -142,7 +96,7 @@ inputUstensiles.addEventListener("input", function(){
 
 
 
-let liIngredient = document .querySelectorAll(".li_ingredients");
+/*let liIngredient = document .querySelectorAll(".li_ingredients");
 
 liIngredient.addEventListener("click", (el) =>{
     const tagLiIngredient = `<li class="suggestion">${el}</li>`
