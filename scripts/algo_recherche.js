@@ -9,7 +9,7 @@ let resultat = [];
 barreChamp.addEventListener("input", function (recette){
     const inputBarre = barreChamp.value;
     if (inputBarre.length >= 3){
-        resultat = recettes.filter(recette => recette.name.toLowerCase().includes(inputBarre.toLowerCase()));
+        resultat = recettes.filter(recette => recette.name.toLowerCase().includes(inputBarre.toLowerCase()) || recette.description.toLowerCase().includes(inputBarre.toLowerCase()));
     }
     recette = resultat;
     displayRecette(recette);
