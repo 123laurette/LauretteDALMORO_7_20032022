@@ -1,5 +1,4 @@
 const barreChamp = document.getElementById("barre_champ");
-
 let resultat = [];
 
 function filtreBarre(){
@@ -12,7 +11,6 @@ function filtreBarre(){
     }
     displayRecette(resultat);
     displayListe(resultat);
-    recettes = resultat;
     
 }
 
