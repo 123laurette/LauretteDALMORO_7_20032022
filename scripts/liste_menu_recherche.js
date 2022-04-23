@@ -1,10 +1,14 @@
-let tabIngredients = [];
-let tabUstensiles = [];
-let tabAppareils = [];
+let tabIngredients;
+let tabUstensiles;
+let tabAppareils;
 
 // ......LISTES INPUT, PUSH ARRAY, SUPP DOUBLONS ET TRIE.....
-function creaListeFiltre(recettes) {
-    recettes.forEach(recette => {
+function creaListeFiltre(recettesParam) {
+    tabIngredients = [];
+    tabUstensiles = [];
+    tabAppareils = [];
+
+    recettesParam.forEach(recette => {
         //Je fais mon tableau
         recette.ingredients.map((ingredient) => {
             tabIngredients.push(ingredient.ingredient);
@@ -25,6 +29,7 @@ function creaListeFiltre(recettes) {
 function creaListeDom(tabTag, id){
     //........je crée un UL et des LI generique.............
     const divListe = document.getElementById(id + "_div");
+    divListe.innerHTML = "";
 
     const ul = document.createElement("ul");
     ul.id = id;
@@ -39,6 +44,78 @@ function creaListeDom(tabTag, id){
         ul.appendChild(li)
     });
 }
+
+
+
+
+//              RECHERCHE AVEC BOUTON FILTRE
+
+const inputIngredients = document.getElementById("input_ingredients");
+let suggestionIng = "";
+
+function filtreBtnIng(){
+    const inputBarreIng = inputIngredients.value;
+
+    //Je filtre en fonction des 3 caractères saisis
+    if(inputBarreIng.length >= 3) {
+        const resultFiltreIng = tabIngredients.filter(el => el.toLowerCase().includes(inputBarreIng.toLowerCase()));
+        suggestionIng = "";
+        //Je parcour le tableau de resultat et j'affiche les suggestions
+        resultFiltreIng.forEach(el =>
+            suggestionIng += `
+            <li class="li_ingredients">${el}</li>`
+        )
+        document.getElementById("ingredients").innerHTML = suggestionIng;
+    }else{
+        creaListeDom(tabIngredients, "ingredients");
+    }
+}
+inputIngredients.addEventListener("input", filtreBtnIng);
+
+
+const inputAppareils = document.getElementById("input_appareils");
+let suggestionApp = "";
+
+
+inputAppareils.addEventListener("input", function(){
+    const inputBarreApp = inputAppareils.value;
+    
+
+    if(inputBarreApp.length >= 3) {
+        const resultFiltreApp = tabAppareils.filter(el => el.toLowerCase().includes(inputBarreApp.toLowerCase()));
+        suggestionApp = "";
+
+        resultFiltreApp.forEach(el =>
+            suggestionApp += `
+            <li class="li_appareils">${el}</li>`
+        )
+        document.getElementById("appareils").innerHTML = suggestionApp;
+    }else{
+        creaListeDom(tabAppareils,  "appareils");
+    }
+})
+
+const inputUstensiles = document.getElementById("input_ustensiles");
+let suggestionust = "";
+
+
+inputUstensiles.addEventListener("input", function(){
+    const inputBarreUst = inputUstensiles.value;
+
+    if(inputBarreUst.length >= 3) {
+        const resultFiltreUst = tabUstensiles.filter(el => el.toLowerCase().includes(inputBarreUst.toLowerCase()));
+        suggestionust = "";
+
+
+        resultFiltreUst.forEach(el =>
+            suggestionust += `
+            <li class="li_ustensiles">${el}</li>`
+        )
+        document.getElementById("ustensiles").innerHTML = suggestionust;
+    }else{
+        creaListeDom(tabUstensiles,  "ustensiles");
+    }
+})
 
 
 

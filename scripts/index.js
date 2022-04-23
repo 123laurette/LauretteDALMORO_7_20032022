@@ -17,11 +17,11 @@ function displayRecette (recettes) {
     });
 }
 
+const recettes = recipes;
 
 function init () {
-    const recette = recipes;
-    displayRecette(recette);
-    displayListe(recette);
+    displayRecette(recettes);
+    displayListe(recettes);
 }
 
 init ();
