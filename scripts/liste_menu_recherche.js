@@ -2,7 +2,8 @@ let tabIngredients;
 let tabUstensiles;
 let tabAppareils;
 
-// ......LISTES INPUT, PUSH ARRAY, SUPP DOUBLONS ET TRIE.....
+//          CREATION DES TABLEAUX BOUTONS FILTRE
+
 function creaListeFiltre(recettesParam) {
     tabIngredients = [];
     tabUstensiles = [];
@@ -26,6 +27,8 @@ function creaListeFiltre(recettesParam) {
 
 }
 
+//          CREATION DES LISTES BOUTONS FILTRE
+
 function creaListeDom(tabTag, id){
     //........je crée un UL et des LI generique.............
     const divListe = document.getElementById(id + "_div");
@@ -46,76 +49,30 @@ function creaListeDom(tabTag, id){
 }
 
 
-
-
 //              RECHERCHE AVEC BOUTON FILTRE
+let suggestion = "";
 
-const inputIngredients = document.getElementById("input_ingredients");
-let suggestionIng = "";
+function filtreBtn(tabTag, id){
+    const inputBtn = document.getElementById("input_" + id);
 
-function filtreBtnIng(){
-    const inputBarreIng = inputIngredients.value;
+    const inputBarre = inputBtn.value;
 
     //Je filtre en fonction des 3 caractères saisis
-    if(inputBarreIng.length >= 3) {
-        const resultFiltreIng = tabIngredients.filter(el => el.toLowerCase().includes(inputBarreIng.toLowerCase()));
-        suggestionIng = "";
+    if(inputBarre.length >= 3) {
+        const resultFiltre = tabTag.filter(el => el.toLowerCase().includes(inputBarre.toLowerCase()));
+        suggestion = "";
         //Je parcour le tableau de resultat et j'affiche les suggestions
-        resultFiltreIng.forEach(el =>
-            suggestionIng += `
-            <li class="li_ingredients">${el}</li>`
+        resultFiltre.forEach(el =>
+            suggestion += `
+            <li class="li_" + id>${el}</li>`
         )
-        document.getElementById("ingredients").innerHTML = suggestionIng;
+        document.getElementById(id).innerHTML = suggestion;
     }else{
-        creaListeDom(tabIngredients, "ingredients");
+        creaListeDom(tabTag, id);
     }
+    inputBtn.addEventListener("input", displayFiltreBtn);
+
 }
-inputIngredients.addEventListener("input", filtreBtnIng);
-
-
-const inputAppareils = document.getElementById("input_appareils");
-let suggestionApp = "";
-
-
-inputAppareils.addEventListener("input", function(){
-    const inputBarreApp = inputAppareils.value;
-    
-
-    if(inputBarreApp.length >= 3) {
-        const resultFiltreApp = tabAppareils.filter(el => el.toLowerCase().includes(inputBarreApp.toLowerCase()));
-        suggestionApp = "";
-
-        resultFiltreApp.forEach(el =>
-            suggestionApp += `
-            <li class="li_appareils">${el}</li>`
-        )
-        document.getElementById("appareils").innerHTML = suggestionApp;
-    }else{
-        creaListeDom(tabAppareils,  "appareils");
-    }
-})
-
-const inputUstensiles = document.getElementById("input_ustensiles");
-let suggestionust = "";
-
-
-inputUstensiles.addEventListener("input", function(){
-    const inputBarreUst = inputUstensiles.value;
-
-    if(inputBarreUst.length >= 3) {
-        const resultFiltreUst = tabUstensiles.filter(el => el.toLowerCase().includes(inputBarreUst.toLowerCase()));
-        suggestionust = "";
-
-
-        resultFiltreUst.forEach(el =>
-            suggestionust += `
-            <li class="li_ustensiles">${el}</li>`
-        )
-        document.getElementById("ustensiles").innerHTML = suggestionust;
-    }else{
-        creaListeDom(tabUstensiles,  "ustensiles");
-    }
-})
 
 
 

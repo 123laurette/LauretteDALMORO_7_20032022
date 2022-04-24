@@ -6,6 +6,13 @@ function displayListe (recette) {
 
 }
 
+function displayFiltreBtn (){
+    filtreBtn(tabIngredients, "ingredients");
+    filtreBtn(tabAppareils,  "appareils");
+    filtreBtn(tabUstensiles,  "ustensiles");
+}
+
+
 const cartesRecettes = document.querySelector(".cartes_recettes");
 
 function displayRecette (recettes) {
@@ -22,6 +29,8 @@ const recettes = recipes;
 function init () {
     displayRecette(recettes);
     displayListe(recettes);
+    displayFiltreBtn();
+
 }
 
 init ();
