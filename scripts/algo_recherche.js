@@ -22,7 +22,15 @@ barreChamp.addEventListener("input", filtreBarre)
 
 
 
+//   A FAIRE
+//suppresion des tags les uns indépendamment des autres
+//liaison entre le choix dans les btn et l'apparition des recettes
+//factoriser le code apparition des tags selectionnes
+//reset des choix btn tags et remise en place de la totalité de la liste
 
+
+
+//ET APRES L'OPTION 2 !!!!
 
 
 

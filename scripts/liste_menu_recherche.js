@@ -68,8 +68,7 @@ function filtreBtn(tabTag, id){
             <li>${el}</li>`
         )
         document.getElementById(id).innerHTML = suggestion;
-        
-        
+            
     }else{
         creaListeDom(tabTag, id);
     }
@@ -91,7 +90,7 @@ function closeTag() {
     ulTag.style.opacity = 0;
 }
 function creaTagDomIng (e){
-        ulTag.style.opacity = 1;
+    ulTag.style.opacity = 1;
 
     const litag = document.createElement("li");
     litag.style.backgroundColor = "#3282F7";
@@ -106,7 +105,8 @@ function creaTagDomIng (e){
     litag.appendChild(iTag);
 
     ulTag.appendChild(litag);
-    e.target.style.visibility = "hidden";    
+    e.target.style.visibility = "hidden"; 
+   
 }
 
 function creaTagDomApp (e){
