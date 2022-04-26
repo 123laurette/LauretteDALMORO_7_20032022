@@ -3,7 +3,6 @@ function displayListe (recette) {
     creaListeDom(tabIngredients, "ingredients");
     creaListeDom(tabAppareils,  "appareils");
     creaListeDom(tabUstensiles,  "ustensiles");
-
 }
 
 function displayFiltreBtn (){
@@ -11,6 +10,9 @@ function displayFiltreBtn (){
     filtreBtn(tabAppareils,  "appareils");
     filtreBtn(tabUstensiles,  "ustensiles");
 }
+
+
+
 
 
 const cartesRecettes = document.querySelector(".cartes_recettes");
@@ -30,7 +32,6 @@ function init () {
     displayRecette(recettes);
     displayListe(recettes);
     displayFiltreBtn();
-
 }
 
 init ();

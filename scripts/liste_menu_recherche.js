@@ -60,19 +60,108 @@ function filtreBtn(tabTag, id){
     //Je filtre en fonction des 3 caractères saisis
     if(inputBarre.length >= 3) {
         const resultFiltre = tabTag.filter(el => el.toLowerCase().includes(inputBarre.toLowerCase()));
+        
         suggestion = "";
         //Je parcour le tableau de resultat et j'affiche les suggestions
         resultFiltre.forEach(el =>
             suggestion += `
-            <li class="li_" + id>${el}</li>`
+            <li>${el}</li>`
         )
         document.getElementById(id).innerHTML = suggestion;
+        
+        
     }else{
         creaListeDom(tabTag, id);
     }
     inputBtn.addEventListener("input", displayFiltreBtn);
 
 }
+
+
+
+//      APPARITION DES TAGS SELECTIONNES 
+// construction de la zone tag selectionne
+
+const divListeing = document.getElementById("ingredients_div");
+const divListeApp = document.getElementById("appareils_div");
+const divListeUst = document.getElementById("ustensiles_div");
+const ulTag = document.getElementById("tag");
+
+function closeTag() {
+    ulTag.style.opacity = 0;
+}
+function creaTagDomIng (e){
+        ulTag.style.opacity = 1;
+
+    const litag = document.createElement("li");
+    litag.style.backgroundColor = "#3282F7";
+
+    const spanTag = document.createElement("span");
+    const iTag = document.createElement("i");
+    iTag.className = "far fa-times-circle";
+    iTag.onclick = closeTag;
+    spanTag.innerHTML = e.target.textContent;
+
+    litag.appendChild(spanTag);
+    litag.appendChild(iTag);
+
+    ulTag.appendChild(litag);
+    e.target.style.visibility = "hidden";    
+}
+
+function creaTagDomApp (e){
+    ulTag.style.opacity = 1;
+
+    const litag = document.createElement("li");
+    litag.style.background = "#68D9A4";
+
+    const spanTag = document.createElement("span");
+    const iTag = document.createElement("i");
+    iTag.className = "far fa-times-circle";
+    iTag.onclick = closeTag;
+
+    spanTag.innerHTML = e.target.textContent;
+
+    litag.appendChild(spanTag);
+    litag.appendChild(iTag);
+
+    ulTag.appendChild(litag);
+    e.target.style.visibility = "hidden";    
+}
+
+function creaTagDomUst (e){
+    ulTag.style.opacity = 1;
+
+    const litag = document.createElement("li");
+    litag.style.backgroundColor = "#ED6454";
+
+    const spanTag = document.createElement("span");
+    const iTag = document.createElement("i");
+    iTag.className = "far fa-times-circle";
+    iTag.onclick = closeTag;
+
+    spanTag.innerHTML = e.target.textContent;
+
+    litag.appendChild(spanTag);
+    litag.appendChild(iTag);
+
+    ulTag.appendChild(litag);
+    e.target.style.visibility = "hidden";    
+}
+
+
+divListeing.addEventListener("click", creaTagDomIng);
+divListeApp.addEventListener("click", creaTagDomApp);
+divListeUst.addEventListener("click", creaTagDomUst);
+
+
+            
+
+
+
+
+
+
 
 
 

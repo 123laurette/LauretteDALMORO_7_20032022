@@ -1,3 +1,6 @@
+
+//          ALGO OPTION 1 BARRE PRINCIPALE
+
 const barreChamp = document.getElementById("barre_champ");
 let resultat = [];
 
@@ -26,13 +29,7 @@ barreChamp.addEventListener("input", filtreBarre)
 
 
 
-/*let liIngredient = document .querySelectorAll(".li_ingredients");
 
-liIngredient.addEventListener("click", (el) =>{
-    const tagLiIngredient = `<li class="suggestion">${el}</li>`
-    document.getElementsById("champ_mot_cle").innerHTML = tagLiIngredient;
-
-})*/
 
 
 

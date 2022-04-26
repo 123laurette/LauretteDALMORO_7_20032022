@@ -39,33 +39,43 @@
         margin-right: 30px;
         font-size: 25px;
     }
-#champ_mot_cle  {
-    display: flex;
+
+    #tag {
+        display: flex;
     align-items: center;
-    justify-content: center;
-    width: 107px;
-    height: 37px;
-    background-color: #3282F7;
-    border-radius: 5px;
+    width: 90%;
+    height: 50px;
     margin-left: 100px;
     margin-top: 20px;
-}
-    li.mot_cle {
+    }
+
+    #tag li {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style-type: none;
+        width: auto;
+        height: 100%; 
+        margin-right: 10px;
+        border-radius: 5px;
+
+
+    }
+    #tag span {
         display: flex;
         align-items: center;
-        border: white solid;
         color: white;
-        font-size: 20px;
-        width: 90px;
+        margin-left: 10px;
+        font-size: 18px;
         height: 30px;
-        margin-right: 5px;
         list-style-type: none; 
 
     }
-    .mot_cle i {
+    #tag i {
         color: white;
-        font-size: 20px;
-        margin-left: 60px;
+        font-size: 18px;
+        margin-right: 10px;
+        margin-left: 10px;
     }
 
 /*......................BOUTON DE FILTRE....................*/    
