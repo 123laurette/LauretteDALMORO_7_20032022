@@ -67,8 +67,9 @@ function filtreBtn(tabTag, id){
             suggestion += `
             <li>${el}</li>`
         )
+
         document.getElementById(id).innerHTML = suggestion;
-            
+
     }else{
         creaListeDom(tabTag, id);
     }
@@ -92,28 +93,27 @@ function closeTag() {
 function creaTagDomIng (e){
     ulTag.style.opacity = 1;
 
-    const litag = document.createElement("li");
-    litag.style.backgroundColor = "#3282F7";
+    const liTag = document.createElement("li");
+    liTag.style.backgroundColor = "#3282F7";
 
     const spanTag = document.createElement("span");
     const iTag = document.createElement("i");
     iTag.className = "far fa-times-circle";
     iTag.onclick = closeTag;
-    spanTag.innerHTML = e.target.textContent;
+    spanTag.innerHTML = e.target.textContent; //precise que c'est l'élément cliqué qui doit apparaitre
 
-    litag.appendChild(spanTag);
-    litag.appendChild(iTag);
+    liTag.appendChild(spanTag);
+    liTag.appendChild(iTag);
 
-    ulTag.appendChild(litag);
-    e.target.style.visibility = "hidden"; 
-   
+    ulTag.appendChild(liTag);
+    e.target.style.visibility = "hidden"; //permet de supp de la liste une fois selectionné
 }
 
 function creaTagDomApp (e){
     ulTag.style.opacity = 1;
 
-    const litag = document.createElement("li");
-    litag.style.background = "#68D9A4";
+    const liTag = document.createElement("li");
+    liTag.style.background = "#68D9A4";
 
     const spanTag = document.createElement("span");
     const iTag = document.createElement("i");
@@ -122,18 +122,18 @@ function creaTagDomApp (e){
 
     spanTag.innerHTML = e.target.textContent;
 
-    litag.appendChild(spanTag);
-    litag.appendChild(iTag);
+    liTag.appendChild(spanTag);
+    liTag.appendChild(iTag);
 
-    ulTag.appendChild(litag);
+    ulTag.appendChild(liTag);
     e.target.style.visibility = "hidden";    
 }
 
 function creaTagDomUst (e){
     ulTag.style.opacity = 1;
 
-    const litag = document.createElement("li");
-    litag.style.backgroundColor = "#ED6454";
+    const liTag = document.createElement("li");
+    liTag.style.backgroundColor = "#ED6454";
 
     const spanTag = document.createElement("span");
     const iTag = document.createElement("i");
@@ -142,17 +142,17 @@ function creaTagDomUst (e){
 
     spanTag.innerHTML = e.target.textContent;
 
-    litag.appendChild(spanTag);
-    litag.appendChild(iTag);
+    liTag.appendChild(spanTag);
+    liTag.appendChild(iTag);
 
-    ulTag.appendChild(litag);
+    ulTag.appendChild(liTag);
     e.target.style.visibility = "hidden";    
 }
 
 
-divListeing.addEventListener("click", creaTagDomIng);
-divListeApp.addEventListener("click", creaTagDomApp);
-divListeUst.addEventListener("click", creaTagDomUst);
+divListeing.addEventListener("click", creaTagDomIng, false);
+divListeApp.addEventListener("click", creaTagDomApp, false);
+divListeUst.addEventListener("click", creaTagDomUst, false);
 
 
             
