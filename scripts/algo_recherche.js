@@ -9,7 +9,9 @@ function filtreBarre(){
     if (inputBarre.length >= 3){
         resultat = recettes.filter(recette => recette.name.toLowerCase().includes(inputBarre.toLowerCase()) || recette.description.toLowerCase().includes(inputBarre.toLowerCase()) || 
         recette.ingredients.forEach ((ingredient) => {ingredient.ingredient.toLowerCase().includes(inputBarre.toLowerCase())}));
+        recettes = resultat;
     }else{
+
         resultat = recettes;
     }
     displayRecette(resultat);

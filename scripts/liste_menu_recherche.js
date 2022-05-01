@@ -43,7 +43,6 @@ function creaListeDom(tabTag, id){
         const li = document.createElement("li");
         li.className = "li_" + id;
         li.innerHTML = el;
-        li.value = el;
         ul.appendChild(li)
     });
 }
@@ -65,7 +64,7 @@ function filtreBtn(tabTag, id){
         //Je parcour le tableau de resultat et j'affiche les suggestions
         resultFiltre.forEach(el =>
             suggestion += `
-            <li>${el}</li>`
+            <li class = li_${id}, value = "${el}">${el}</li>`
         )
 
         document.getElementById(id).innerHTML = suggestion;
@@ -82,78 +81,33 @@ function filtreBtn(tabTag, id){
 //      APPARITION DES TAGS SELECTIONNES 
 // construction de la zone tag selectionne
 
-const divListeing = document.getElementById("ingredients_div");
-const divListeApp = document.getElementById("appareils_div");
-const divListeUst = document.getElementById("ustensiles_div");
+
 const ulTag = document.getElementById("tag");
 
-function closeTag() {
-    ulTag.style.opacity = 0;
-}
-function creaTagDomIng (e){
-    ulTag.style.opacity = 1;
+function creaTagDom (id, color){
 
     const liTag = document.createElement("li");
-    liTag.style.backgroundColor = "#3282F7";
+    liTag.className = id;
+    liTag.style.background = color;
+    //liTag.style.opacity = 0;
 
     const spanTag = document.createElement("span");
+    spanTag.className = "span_" + id;
     const iTag = document.createElement("i");
     iTag.className = "far fa-times-circle";
-    iTag.onclick = closeTag;
-    spanTag.innerHTML = e.target.textContent; //precise que c'est l'élément cliqué qui doit apparaitre
 
     liTag.appendChild(spanTag);
     liTag.appendChild(iTag);
-
     ulTag.appendChild(liTag);
-    e.target.style.visibility = "hidden"; //permet de supp de la liste une fois selectionné
 }
 
-function creaTagDomApp (e){
-    ulTag.style.opacity = 1;
-
-    const liTag = document.createElement("li");
-    liTag.style.background = "#68D9A4";
-
-    const spanTag = document.createElement("span");
-    const iTag = document.createElement("i");
-    iTag.className = "far fa-times-circle";
-    iTag.onclick = closeTag;
-
-    spanTag.innerHTML = e.target.textContent;
-
-    liTag.appendChild(spanTag);
-    liTag.appendChild(iTag);
-
-    ulTag.appendChild(liTag);
-    e.target.style.visibility = "hidden";    
-}
-
-function creaTagDomUst (e){
-    ulTag.style.opacity = 1;
-
-    const liTag = document.createElement("li");
-    liTag.style.backgroundColor = "#ED6454";
-
-    const spanTag = document.createElement("span");
-    const iTag = document.createElement("i");
-    iTag.className = "far fa-times-circle";
-    iTag.onclick = closeTag;
-
-    spanTag.innerHTML = e.target.textContent;
-
-    liTag.appendChild(spanTag);
-    liTag.appendChild(iTag);
-
-    ulTag.appendChild(liTag);
-    e.target.style.visibility = "hidden";    
-}
+const divListeIng = document.querySelector("ingredients");
+console.log(divListeIng);
 
 
-divListeing.addEventListener("click", creaTagDomIng, false);
-divListeApp.addEventListener("click", creaTagDomApp, false);
-divListeUst.addEventListener("click", creaTagDomUst, false);
-
+//e.target.style.visibility = "hidden"; //permet de supp de la liste une fois selectionné
+//el.addEventListener("click", displayTagBtn);
+//spanTag.innerHTML = el.textContent; 
 
             
 
