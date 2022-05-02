@@ -43,7 +43,6 @@ function creaListeDom(tabTag, id){
         const li = document.createElement("li");
         li.className = "li_" + id;
         li.innerHTML = el;
-        li.onclick = el;
         ul.appendChild(li)
     });
 }
@@ -77,12 +76,42 @@ function filtreBtn(tabTag, id){
 
 }
 
+//............ESSAI DE REFACTORISATION .............
+const ulTag = document.getElementById("tag");
+var divListe = "";
+var spanTag = "";
+var liChoix = "";
+
+function creaTagDom (id,e){
+    liChoix = document.querySelectorAll(".li_" + id);
+    console.log(liChoix);
+
+    liChoix.forEach(e => {
+        const litag = document.createElement("li");
+        litag.className = "li_" + id;
+    
+        const spanTag = document.createElement("span");
+        spanTag.innerHTML = e.textContent;
+        const iTag = document.createElement("i");
+        iTag.className = "far fa-times-circle";
+    
+        litag.appendChild(spanTag);
+        litag.appendChild(iTag);
+    
+        ulTag.appendChild(litag);
+    })
+
+}
+
+
+
+
 
 
 //      APPARITION DES TAGS SELECTIONNES 
 // construction de la zone tag selectionne
 
-const divListeing = document.getElementById("ingredients_div");
+/*const divListeing = document.getElementById("ingredients_div");
 const divListeApp = document.getElementById("appareils_div");
 const divListeUst = document.getElementById("ustensiles_div");
 const ulTag = document.getElementById("tag");
@@ -142,43 +171,8 @@ function creaTagDomUst (e){
 
 divListeing.addEventListener("click", creaTagDomIng);
 divListeApp.addEventListener("click", creaTagDomApp);
-divListeUst.addEventListener("click", creaTagDomUst);
+divListeUst.addEventListener("click", creaTagDomUst);*/
 
-
-
-//............ESSAI DE REFACTORISATION .............
-/*const ulTag = document.getElementById("tag");
-var divListe = "";
-var spanTag = "";
-
-function creaTagDom (id, color, e){
-    liChoix = document.querySelectorAll(".li_choix_" + id);
-    console.log(liChoix);
-
-    const liTag = document.createElement("li");
-    liTag.className = id;
-    liTag.style.background = color;
-    //liTag.style.opacity = 0;
-
-    spanTag = document.createElement("span");
-    spanTag.className = "span_" + id;
-    spanTag.push(e.target.textContent);
-
-    const iTag = document.createElement("i");
-    iTag.className = "far fa-times-circle";
-
-    liTag.appendChild(spanTag);
-    liTag.appendChild(iTag);
-    ulTag.appendChild(liTag);
-    liChoix.addEventListener("click", e, displayTagBtn);
-
-}*/
-
-
-
-//e.target.style.visibility = "hidden"; //permet de supp de la liste une fois selectionné
-//el.addEventListener("click", displayTagBtn);
-//spanTag.innerHTML = el.textContent; 
 
             
 

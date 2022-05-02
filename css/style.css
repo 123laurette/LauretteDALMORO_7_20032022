@@ -59,7 +59,15 @@
         margin-right: 10px;
         border-radius: 5px;
     }
-    
+    .li_ingredients {
+        background-color: #3282F7;
+    }
+    .li_appareils {
+        background-color: #68D9A4;
+    }
+    .li_ustensiles {
+        background-color: #ED6454;
+    }
     #tag span {
         display: flex;
         align-items: center;

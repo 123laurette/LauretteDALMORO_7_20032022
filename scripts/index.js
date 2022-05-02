@@ -10,11 +10,11 @@ function displayFiltreBtn (){
     filtreBtn(tabAppareils,  "appareils");
     filtreBtn(tabUstensiles,  "ustensiles");
 }
-/*function displayTagBtn (){
+function displayTagBtn (){
     creaTagDom("ingredients");
     creaTagDom("appareils");
     creaTagDom("ustensiles");
-}*/
+}
 
 const cartesRecettes = document.querySelector(".cartes_recettes");
 
@@ -33,7 +33,7 @@ function init () {
     displayRecette(recettes);
     displayListe(recettes);
     displayFiltreBtn();
-    //displayTagBtn();
+    displayTagBtn();
 }
 
 init ();
