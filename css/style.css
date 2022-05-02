@@ -58,9 +58,8 @@
         height: 100%; 
         margin-right: 10px;
         border-radius: 5px;
-
-
     }
+    
     #tag span {
         display: flex;
         align-items: center;

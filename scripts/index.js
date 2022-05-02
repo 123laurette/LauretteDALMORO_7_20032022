@@ -10,11 +10,11 @@ function displayFiltreBtn (){
     filtreBtn(tabAppareils,  "appareils");
     filtreBtn(tabUstensiles,  "ustensiles");
 }
-function displayTagBtn (){
-    creaTagDom("ingredients","#3282F7" );
-    creaTagDom("appareils", "#68D9A4");
-    creaTagDom("ustensiles", "#ED6454");
-}
+/*function displayTagBtn (){
+    creaTagDom("ingredients");
+    creaTagDom("appareils");
+    creaTagDom("ustensiles");
+}*/
 
 const cartesRecettes = document.querySelector(".cartes_recettes");
 
@@ -33,7 +33,7 @@ function init () {
     displayRecette(recettes);
     displayListe(recettes);
     displayFiltreBtn();
-    displayTagBtn();
+    //displayTagBtn();
 }
 
 init ();
