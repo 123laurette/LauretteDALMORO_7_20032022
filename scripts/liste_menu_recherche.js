@@ -68,7 +68,8 @@ function filtreBtn(tabTag, id){
         )
 
         document.getElementById(id).innerHTML = suggestion;
-
+        console.log(suggestion);
+        
     }else{
         creaListeDom(tabTag, id);
     }
@@ -76,42 +77,10 @@ function filtreBtn(tabTag, id){
 
 }
 
-//............ESSAI DE REFACTORISATION .............
-const ulTag = document.getElementById("tag");
-var divListe = "";
-var spanTag = "";
-var liChoix = "";
-
-function creaTagDom (id,e){
-    liChoix = document.querySelectorAll(".li_" + id);
-    console.log(liChoix);
-
-    liChoix.forEach(e => {
-        const litag = document.createElement("li");
-        litag.className = "li_" + id;
-    
-        const spanTag = document.createElement("span");
-        spanTag.innerHTML = e.textContent;
-        const iTag = document.createElement("i");
-        iTag.className = "far fa-times-circle";
-    
-        litag.appendChild(spanTag);
-        litag.appendChild(iTag);
-    
-        ulTag.appendChild(litag);
-    })
-
-}
-
-
-
-
-
-
 //      APPARITION DES TAGS SELECTIONNES 
 // construction de la zone tag selectionne
 
-/*const divListeing = document.getElementById("ingredients_div");
+const divListeing = document.getElementById("ingredients_div");
 const divListeApp = document.getElementById("appareils_div");
 const divListeUst = document.getElementById("ustensiles_div");
 const ulTag = document.getElementById("tag");
@@ -131,7 +100,7 @@ function creaTagDomIng (e){
     litag.appendChild(iTag);
 
     ulTag.appendChild(litag);
-    filtreBarre(recettes);
+    
 }
 
 function creaTagDomApp (e){
@@ -171,7 +140,71 @@ function creaTagDomUst (e){
 
 divListeing.addEventListener("click", creaTagDomIng);
 divListeApp.addEventListener("click", creaTagDomApp);
-divListeUst.addEventListener("click", creaTagDomUst);*/
+divListeUst.addEventListener("click", creaTagDomUst);
+
+
+//liaison entre les tags et les recettes
+const barreTag = document.getElementById("tag");
+let resultatTag = [];
+
+function filtreTag(){
+    var barreTagValue = barreTag.value;
+
+    if (barreTagValue = true){
+        resultatTag = recettes.filter(recette => recette.appliance.toLowerCase().includes(barreTagValue.toLowerCase())) || 
+
+        recette.ustensils.forEach ((ustensile) => {ustensile.toLowerCase().includes(barreTagValue.toLowerCase())}) || 
+
+        recette.ingredients.forEach ((ingredient) => {ingredient.ingredient.toLowerCase().includes(barreTagValue.toLowerCase())});
+        recettes = resultatTag;
+
+    }else{
+
+        resultatTag = recettes;
+    }
+    displayRecette(resultatTag);
+    displayListe(resultatTag);
+}
+
+
+
+//............ESSAI DE REFACTORISATION .............
+/*const ulTag = document.getElementById("tag");
+var spanTag = "";
+var ulListe = [];
+var liListe = [];
+
+function creaTagDom (id){
+    liListe = document.querySelectorAll(".li_" + id);
+    liListe.forEach(e => {
+        const liTag = document.createElement("li");
+        liTag.className = "li_" + id;
+    
+        const spanTag = document.createElement("span");
+        spanTag.innerHTML = e.textContent; 
+
+        const iTag = document.createElement("i");
+        iTag.className = "far fa-times-circle";
+    
+        liTag.appendChild(spanTag);
+        liTag.appendChild(iTag);
+    
+        ulTag.appendChild(liTag);
+    })
+}
+liListe.addEventListener("click", (e) =>{
+
+});*/
+        
+
+
+
+
+
+
+
+
+
 
 
             
