@@ -12,11 +12,7 @@ function displayFiltreBtn (){
 }
 
 
-/*function displayTagBtn (){
-    creaTagDom("ingredients");
-    creaTagDom("appareils");
-    creaTagDom("ustensiles");
-}*/
+
 
 const cartesRecettes = document.querySelector(".cartes_recettes");
 
@@ -35,7 +31,6 @@ function init () {
     displayRecette(recettes);
     displayListe(recettes);
     displayFiltreBtn();
-    //displayTagBtn();
     filtreTag();
 
 }

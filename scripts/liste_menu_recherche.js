@@ -80,81 +80,50 @@ function filtreBtn(tabTag, id){
 //      APPARITION DES TAGS SELECTIONNES 
 // construction de la zone tag selectionne
 
-const divListeing = document.getElementById("ingredients_div");
+//............ESSAI DE REFACTORISATION .............
+
+const divListeIng = document.getElementById("ingredients_div");
 const divListeApp = document.getElementById("appareils_div");
 const divListeUst = document.getElementById("ustensiles_div");
+
 const ulTag = document.getElementById("tag");
+var spanTag = "";
 
 
-function creaTagDomIng (e){
-
-    const litag = document.createElement("li");
-    litag.style.backgroundColor = "#3282F7";
-
-    const spanTag = document.createElement("span");
-    spanTag.className = "span_ing";
-    const iTag = document.createElement("i");
-    iTag.className = "far fa-times-circle";
-    spanTag.innerHTML = e.target.textContent;
-
-    litag.appendChild(spanTag);
-    litag.appendChild(iTag);
-
-    ulTag.appendChild(litag);
-    
-}
-
-function creaTagDomApp (e){
-
-    const litag = document.createElement("li");
-    litag.style.background = "#68D9A4";
+function creaTagDom (e, id){
+    const liTag = document.createElement("li");
+    liTag.className = "li_" + id;
 
     const spanTag = document.createElement("span");
-    spanTag.className = "span_app";
+    spanTag.className = "span_" + id;
 
     const iTag = document.createElement("i");
     iTag.className = "far fa-times-circle";
 
     spanTag.innerHTML = e.target.textContent;
 
-    litag.appendChild(spanTag);
-    litag.appendChild(iTag);
+    liTag.appendChild(spanTag);
+    liTag.appendChild(iTag);
 
-    ulTag.appendChild(litag);
+    ulTag.appendChild(liTag);
 }
+divListeIng.addEventListener("click", (e) => {
+    creaTagDom(e,"ingredients");
+}); 
+divListeUst.addEventListener("click", (e) => {
+    creaTagDom(e,"ustensiles");
+});
+divListeApp.addEventListener("click", (e) => {
+    creaTagDom(e,"appareils");
+}); 
 
-function creaTagDomUst (e){
-
-    const litag = document.createElement("li");
-    litag.style.backgroundColor = "#ED6454";
-
-    const spanTag = document.createElement("span");
-    spanTag.className = "span_ust";
-
-    const iTag = document.createElement("i");
-    iTag.className = "far fa-times-circle";
-
-    spanTag.innerHTML = e.target.textContent;
-
-    litag.appendChild(spanTag);
-    litag.appendChild(iTag);
-
-    ulTag.appendChild(litag);
-}
-
-
-divListeing.addEventListener("click", creaTagDomIng);
-divListeApp.addEventListener("click", creaTagDomApp);
-divListeUst.addEventListener("click", creaTagDomUst);
 
 
 //liaison entre les tags et les recettes
-const spanTag = document.getElementsByClassName("span_ing");
 let resultatTag = [];
-console.log(spanTag);
 
 function filtreTag(){
-    var spanTagValue = spanTag.value;
+    var spanTagValue = spanTag.textContent;
 
     if (spanTagValue = true){
         resultatTag = recettes.filter(recette => recette.appliance.toLowerCase().includes(spanTagValue.toLowerCase())) || 
@@ -174,20 +143,26 @@ function filtreTag(){
 
 
 
-//............ESSAI DE REFACTORISATION .............
-/*const ulTag = document.getElementById("tag");
-var spanTag = "";
-var ulListe = [];
-var liListe = [];
 
-function creaTagDom (id){
-    liListe = document.querySelectorAll(".li_" + id);
-    liListe.forEach(e => {
+
+
+
+
+
+
+
+
+
+
+
+
+    /*divListe = document.querySelectorAll(id + "_div");
+    divListe.forEach(e => {
         const liTag = document.createElement("li");
         liTag.className = "li_" + id;
     
         const spanTag = document.createElement("span");
-        spanTag.innerHTML = e.textContent; 
+        spanTag.innerHTML = e.target.textContent; 
 
         const iTag = document.createElement("i");
         iTag.className = "far fa-times-circle";
@@ -197,10 +172,9 @@ function creaTagDom (id){
     
         ulTag.appendChild(liTag);
     })
-}
-liListe.addEventListener("click", (e) =>{
+    divListe.addEventListener("click", displayTagBtn);
 
-});*/
+}*/
         
 
 
