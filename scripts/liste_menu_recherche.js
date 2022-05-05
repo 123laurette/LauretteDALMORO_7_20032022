@@ -92,6 +92,7 @@ function creaTagDomIng (e){
     litag.style.backgroundColor = "#3282F7";
 
     const spanTag = document.createElement("span");
+    spanTag.className = "span_ing";
     const iTag = document.createElement("i");
     iTag.className = "far fa-times-circle";
     spanTag.innerHTML = e.target.textContent;
@@ -109,6 +110,8 @@ function creaTagDomApp (e){
     litag.style.background = "#68D9A4";
 
     const spanTag = document.createElement("span");
+    spanTag.className = "span_app";
+
     const iTag = document.createElement("i");
     iTag.className = "far fa-times-circle";
 
@@ -126,6 +129,8 @@ function creaTagDomUst (e){
     litag.style.backgroundColor = "#ED6454";
 
     const spanTag = document.createElement("span");
+    spanTag.className = "span_ust";
+
     const iTag = document.createElement("i");
     iTag.className = "far fa-times-circle";
 
@@ -144,18 +149,19 @@ divListeUst.addEventListener("click", creaTagDomUst);
 
 
 //liaison entre les tags et les recettes
-const barreTag = document.getElementById("tag");
+const spanTag = document.getElementsByClassName("span_ing");
 let resultatTag = [];
+console.log(spanTag);
 
 function filtreTag(){
-    var barreTagValue = barreTag.value;
+    var spanTagValue = spanTag.value;
 
-    if (barreTagValue = true){
-        resultatTag = recettes.filter(recette => recette.appliance.toLowerCase().includes(barreTagValue.toLowerCase())) || 
+    if (spanTagValue = true){
+        resultatTag = recettes.filter(recette => recette.appliance.toLowerCase().includes(spanTagValue.toLowerCase())) || 
 
-        recette.ustensils.forEach ((ustensile) => {ustensile.toLowerCase().includes(barreTagValue.toLowerCase())}) || 
+        recette.ustensils.forEach ((ustensile) => {ustensile.toLowerCase().includes(spanTagValue.toLowerCase())}) || 
 
-        recette.ingredients.forEach ((ingredient) => {ingredient.ingredient.toLowerCase().includes(barreTagValue.toLowerCase())});
+        recette.ingredients.forEach ((ingredient) => {ingredient.ingredient.toLowerCase().includes(spanTagValue.toLowerCase())});
         recettes = resultatTag;
 
     }else{
