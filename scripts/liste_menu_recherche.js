@@ -87,9 +87,8 @@ const divListeApp = document.getElementById("appareils_div");
 const divListeUst = document.getElementById("ustensiles_div");
 
 const ulTag = document.getElementById("tag");
-var spanTag = "";
 
-
+//Création des balises du Dom pour les tags
 function creaTagDom (e, id){
     const liTag = document.createElement("li");
     liTag.className = "li_" + id;
@@ -104,33 +103,61 @@ function creaTagDom (e, id){
 
     liTag.appendChild(spanTag);
     liTag.appendChild(iTag);
-
     ulTag.appendChild(liTag);
 }
+//evenement au click sur un mot de la liste
 divListeIng.addEventListener("click", (e) => {
-    creaTagDom(e,"ingredients");
+    creaTagDom(e,"ingredients");    //j'appel la fonction de créa dans le dom
+    filtreTag();                    // j'appel la fonction de trie des recettes en relation avec les tags
 }); 
 divListeUst.addEventListener("click", (e) => {
     creaTagDom(e,"ustensiles");
+    filtreTag();
+
 });
 divListeApp.addEventListener("click", (e) => {
     creaTagDom(e,"appareils");
+    filtreTag();
+
 }); 
 
 
-
-//liaison entre les tags et les recettes
-let resultatTag = [];
+//Filtre entre les tags et les recettes
 
 function filtreTag(){
-    var spanTagValue = spanTag.textContent;
+    //création de tableau vide des tag
+    var tabUst = [];
+    var tabApp = [];
+    var tabIng = [];
 
-    if (spanTagValue = true){
-        resultatTag = recettes.filter(recette => recette.appliance.toLowerCase().includes(spanTagValue.toLowerCase())) || 
+    //récupère le li qui est contenu dans ultag(element enfant)
+    Array.from(ulTag.children).forEach(ele => {
+            if(ele.children[0].className == "span_ustensiles"){ //si l'element enfant à la class span_ustensiles
+                tabUst.push(ele.children[0].textContent.toLowerCase()); //je le mets dans le tableau des ustensiles
+            }
+            if(ele.children[0].className == "span_appareils"){
+                tabApp.push(ele.children[0].textContent.toLowerCase());
+            }
+            if(ele.children[0].className == "span_ingredients"){
+                tabIng.push(ele.children[0].textContent.toLowerCase());
+            }
+        }
+    )
+    
+        // every : teste si tous les element d'un tableau verifient une condition, renvoie true
+        // some : teste si au moins un element du tableau passe le test, renvoie booleen
 
-        recette.ustensils.forEach ((ustensile) => {ustensile.toLowerCase().includes(spanTagValue.toLowerCase())}) || 
 
-        recette.ingredients.forEach ((ingredient) => {ingredient.ingredient.toLowerCase().includes(spanTagValue.toLowerCase())});
+    if (ulTag.childElementCount > 0){   //si ultag contien quelque chose
+        resultatTag = recettes.filter(recette => {  //je parcour les recettes
+            return (                                //et je retourne, la comparaison entre les tableaux et les recettes
+                //test si tous les éléments contenus dans tab...sont inclus dans au moins une recette
+                tabApp.every(app => recette.appliance.toLowerCase().includes(app)) &&
+                //test sur tous les elements du tableau crée et parcour du tableau initial pour verifier au moins un element
+                tabUst.every(ust => recette.ustensils.some ((ustensile) => ustensile.toLowerCase().includes(ust))) &&
+                tabIng.every(ing => recette.ingredients.some ((ingredient) => ingredient.ingredient.toLowerCase().includes(ing)))
+            )
+        });
         recettes = resultatTag;
 
     }else{
@@ -140,60 +167,6 @@ function filtreTag(){
     displayRecette(resultatTag);
     displayListe(resultatTag);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*divListe = document.querySelectorAll(id + "_div");
-    divListe.forEach(e => {
-        const liTag = document.createElement("li");
-        liTag.className = "li_" + id;
-    
-        const spanTag = document.createElement("span");
-        spanTag.innerHTML = e.target.textContent; 
-
-        const iTag = document.createElement("i");
-        iTag.className = "far fa-times-circle";
-    
-        liTag.appendChild(spanTag);
-        liTag.appendChild(iTag);
-    
-        ulTag.appendChild(liTag);
-    })
-    divListe.addEventListener("click", displayTagBtn);
-
-}*/
-        
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
 
 
 

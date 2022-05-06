@@ -1,3 +1,4 @@
+//Renseigne la fonction creaListeDom pour les paramètres
 function displayListe (recette) {
     creaListeFiltre(recette);
     creaListeDom(tabIngredients, "ingredients");
@@ -5,6 +6,7 @@ function displayListe (recette) {
     creaListeDom(tabUstensiles,  "ustensiles");
 }
 
+//Renseigne la fonction filtreBtn pour les paramètres
 function displayFiltreBtn (){
     filtreBtn(tabIngredients, "ingredients");
     filtreBtn(tabAppareils,  "appareils");
@@ -31,7 +33,6 @@ function init () {
     displayRecette(recettes);
     displayListe(recettes);
     displayFiltreBtn();
-    filtreTag();
 
 }
 
