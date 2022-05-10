@@ -179,18 +179,19 @@ divListeApp.addEventListener("click", (e) => {
     filtreTag();
 }); 
 
-
-//essai pour eviter repetition
+//**************************************************************************************************** */
+//                      essais pour eviter repetition
 
 /*if(e.children[0].className == "span_ustensiles" ){
     if(!tabUst.includes(e.children[0].textContent.toLowerCase())){
         tabUst.push(e.children[0].textContent.toLowerCase());
     }
-
+*******************************************************************************************************
 
 if(ele.children[0].className == "span_ustensiles" && !tabUst == ele.children[0].textContent.toLowerCase()){
     tabUst.push(ele.children[0].textContent.toLowerCase());
 }
+***********************************************************************************************************
 
 if(e.children[0].className == "span_ustensiles"){
     tabUst.push(e.children[0].textContent.toLowerCase());
@@ -199,7 +200,7 @@ if(e.children[0].className == "span_ustensiles"){
     console.log(tabUst);
 
 }
-
+*********************************************************************************************************
 
 if(e.children[0].className == "span_ustensiles"){
     tabUst.push(e.children[0].textContent.toLowerCase());
@@ -208,7 +209,12 @@ if(e.children[0].className == "span_ustensiles"){
     );
 }
 */
-var closeApp = document.getElementById("close_appareils");
+
+//**************************************************************************************** */
+
+//fonction de suppression du tag avec la croix
+
+/*var closeApp = document.getElementById("close_appareils");
 console.log(closeApp);
 
 function closeTag(){
@@ -218,6 +224,9 @@ function closeTag(){
 }
 
 closeApp.addEventListener("click", closeTag);
+*/
+
+//********************************************************************************************* */
 
 
 //....................OUVERTURE DES LISTES
