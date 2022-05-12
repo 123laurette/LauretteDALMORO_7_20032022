@@ -98,7 +98,9 @@ function creaTagDom (e, id){
 
     const iTag = document.createElement("i");
     iTag.className = "far fa-times-circle";
-    iTag.id = "close_" + id;
+    //permets de cibler une croix en particulier
+    iTag.id = "close_" + e.target.textContent;
+    iTag.onclick = closeTag;
 
     spanTag.innerHTML = e.target.textContent;
 
@@ -107,9 +109,21 @@ function creaTagDom (e, id){
     ulTag.appendChild(liTag);
 
 }
+//**************************************************************************************** */
+
+//fonction de suppression du tag avec la croix
 
 
+function closeTag(){
+    
+    var liCloseTag = document.getElementById("tag", ".li_appareils");
+    console.log(liCloseTag);
+    liCloseTag.style.display = "none";
+    filtreTag();
+}
 
+
+//*************************************************************************************** */
 
 //Filtre entre les tags et les recettes
 
@@ -210,21 +224,8 @@ if(e.children[0].className == "span_ustensiles"){
 }
 */
 
-//**************************************************************************************** */
 
-//fonction de suppression du tag avec la croix
 
-/*var closeApp = document.getElementById("close_appareils");
-console.log(closeApp);
-
-function closeTag(){
-    closeApp.forEach(e => {
-        e.style.display = "none";
-    })
-}
-
-closeApp.addEventListener("click", closeTag);
-*/
 
 //********************************************************************************************* */
 
