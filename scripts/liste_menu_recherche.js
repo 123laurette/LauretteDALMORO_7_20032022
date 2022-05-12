@@ -101,6 +101,7 @@ function creaTagDom (e, id){
     iTag.className = "far fa-times-circle";
     //permets de cibler une croix en particulier
     iTag.id = "close_" + e.target.textContent;
+    iTag.onclick = closeTag;
 
     spanTag.innerHTML = e.target.textContent;
 
@@ -113,16 +114,19 @@ function creaTagDom (e, id){
 
 //fonction de suppression du tag avec la croix
 var liCloseTag;
-var itag = "";
+var iCloseTag;
 
 function closeTag(e){
-    itag = document.getElementById("close_" + e.target.textContent);
+    iCloseTag = document.getElementById("close_" + e.target.textContent);
+    console.log(iCloseTag);
     liCloseTag = document.getElementById("tag", "#li_" + e.target.textContent);
-    console.log(liCloseTag);
+    
     liCloseTag.style.opacity = 0;
     filtreTag();
+    displayRecette(recettes);
+    displayListe(recettes);
 }
-itag.addEventListener("click", closeTag);
+//iCloseTag.addEventListener("click", closeTag);
 
 
 //*************************************************************************************** */
