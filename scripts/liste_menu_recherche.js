@@ -92,6 +92,7 @@ const ulTag = document.getElementById("tag");
 function creaTagDom (e, id){
     const liTag = document.createElement("li");
     liTag.className = "li_" + id;
+    liTag.id = "li_" + e.target.textContent;
 
     const spanTag = document.createElement("span");
     spanTag.className = "span_" + id;
@@ -100,7 +101,6 @@ function creaTagDom (e, id){
     iTag.className = "far fa-times-circle";
     //permets de cibler une croix en particulier
     iTag.id = "close_" + e.target.textContent;
-    iTag.onclick = closeTag;
 
     spanTag.innerHTML = e.target.textContent;
 
@@ -112,15 +112,17 @@ function creaTagDom (e, id){
 //**************************************************************************************** */
 
 //fonction de suppression du tag avec la croix
+var liCloseTag;
+var itag = "";
 
-
-function closeTag(){
-    
-    var liCloseTag = document.getElementById("tag", ".li_appareils");
+function closeTag(e){
+    itag = document.getElementById("close_" + e.target.textContent);
+    liCloseTag = document.getElementById("tag", "#li_" + e.target.textContent);
     console.log(liCloseTag);
-    liCloseTag.style.display = "none";
+    liCloseTag.style.opacity = 0;
     filtreTag();
 }
+itag.addEventListener("click", closeTag);
 
 
 //*************************************************************************************** */
