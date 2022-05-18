@@ -12,7 +12,6 @@ function filtreBarre(){
         recette.ingredients.forEach ((ingredient) => {ingredient.ingredient.toLowerCase().includes(inputBarre.toLowerCase())}));
         recettes = resultat;    
     }else{
-
         resultat = recettes;
     }
     displayRecette(resultat);   //j'affiche le resultat de ce filtre au niveau des recettes

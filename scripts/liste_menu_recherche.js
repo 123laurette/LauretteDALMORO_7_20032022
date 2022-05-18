@@ -39,10 +39,10 @@ function creaListeDom(tabTag, id){
 
     divListe.appendChild(ul);
 
-    tabTag.forEach(el => {
+    tabTag.forEach(e => {
         const li = document.createElement("li");
         li.className = "li_" + id;
-        li.innerHTML = el;
+        li.innerHTML = e;
         ul.appendChild(li)
     });
 }
@@ -86,7 +86,7 @@ const divListeIng = document.getElementById("ingredients_div");
 const divListeApp = document.getElementById("appareils_div");
 const divListeUst = document.getElementById("ustensiles_div");
 
-const ulTag = document.getElementById("tag");
+var ulTag = document.getElementById("tag");
 
 //Création des balises du Dom pour les tags
 function creaTagDom (e, id){
@@ -117,16 +117,26 @@ var liCloseTag;
 var iCloseTag;
 
 function closeTag(e){
-    iCloseTag = document.getElementById("close_" + e.target.textContent);
-    console.log(iCloseTag);
-    liCloseTag = document.getElementById("tag", "#li_" + e.target.textContent);
-    
-    liCloseTag.style.opacity = 0;
+
+    ulTag.removeChild(e.target.parentNode);
+
+    tabIng.splice(e); //supprime l'element e du tableau et crée un nouveau tableau de tag
+
+    tabApp.splice(e);
+
+    tabUst.splice(e);
+
+    recettes = recipes;
+
     filtreTag();
+    filtreBarre();
+
     displayRecette(recettes);
     displayListe(recettes);
+    
+
+
 }
-//iCloseTag.addEventListener("click", closeTag);
 
 
 //*************************************************************************************** */
@@ -139,11 +149,13 @@ var tabApp = [];
 var tabIng = [];
 
 function filtreTag(){
+
     //récupère le li qui est contenu dans ultag(element enfant)
     Array.from(ulTag.children).forEach(e => {
             if(e.children[0].className == "span_ustensiles"){
                  //si l'element enfant à la class span_ustensiles
-                tabUst.push(e.children[0].textContent.toLowerCase());//je le mets dans le tableau des ustensiles
+                tabUst.push(e.children[0].textContent.toLowerCase());
+                //je le mets dans le tableau des ustensiles
             }
             if(e.children[0].className == "span_appareils"){
                 tabApp.push(e.children[0].textContent.toLowerCase());
@@ -152,6 +164,7 @@ function filtreTag(){
             if(e.children[0].className == "span_ingredients"){
                 tabIng.push(e.children[0].textContent.toLowerCase());
             }
+
     })
 
         // every : teste si tous les element d'un tableau verifient une condition, renvoie true
@@ -181,22 +194,36 @@ function filtreTag(){
     displayListe(resultatTag);
 
 }
-
-
 //evenement au click sur un mot de la liste
-divListeIng.addEventListener("click", (e) => {
-    creaTagDom(e,"ingredients");    //j'appel la fonction de créa dans le dom
-    filtreTag();// j'appel la fonction de trie des recettes en relation avec les tags
-}); 
+divListeIng.addEventListener("click", (e)  => {
+
+    console.log(tabIng);
+
+    if (!tabIng.includes(e.textContent)) { 
+        console.log(tabIng);
+
+        creaTagDom(e,"ingredients");    //j'appel la fonction de créa dans le dom
+        filtreTag();// j'appel la fonction de trie des recettes en relation avec les tags
+        console.log(tabIng);
+    }
+    tabIng = [...new Set (tabIng)];
+
+});
+
 
 divListeUst.addEventListener("click", (e) => {
+    //tabUst = [];
     creaTagDom(e,"ustensiles");
     filtreTag();
+    
 });
 
 divListeApp.addEventListener("click", (e) => {
+    //tabApp = [];
     creaTagDom(e,"appareils");
     filtreTag();
+    console.log(tabApp);
+
 }); 
 
 //**************************************************************************************************** */
@@ -315,10 +342,4 @@ function closeListeUstensiles(){
     ListeUstensiles.style.display = "none";
     btnUstensile.style.transform = "translateX(0)";
 }
-    
-
-
-
-
-
 
