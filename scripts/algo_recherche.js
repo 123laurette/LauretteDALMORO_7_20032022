@@ -24,21 +24,3 @@ barreChamp.addEventListener("input", filtreBarre)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -210,12 +210,12 @@ divListeUst.addEventListener("click", (e) => {
     //e.target.textContent.display = "none";
 
     //tabUst = [];
-    if(ulTag.children.includes(e.target.textContent)){
+    //if(ulTag.children.includes(e.target.textContent)){
 
-    }else{
+    //}else{
         creaTagDom(e,"ustensiles");
         filtreTag();
-    }
+    //}
 });
 
 divListeApp.addEventListener("click", (e) => {
