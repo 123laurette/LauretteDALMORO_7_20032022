@@ -133,9 +133,6 @@ function closeTag(e){
 
     displayRecette(recettes);
     displayListe(recettes);
-    
-
-
 }
 
 
@@ -196,26 +193,29 @@ function filtreTag(){
 }
 //evenement au click sur un mot de la liste
 divListeIng.addEventListener("click", (e)  => {
-
-    console.log(tabIng);
-
-    if (!tabIng.includes(e.textContent)) { 
-        console.log(tabIng);
-
         creaTagDom(e,"ingredients");    //j'appel la fonction de créa dans le dom
         filtreTag();// j'appel la fonction de trie des recettes en relation avec les tags
         console.log(tabIng);
-    }
-    tabIng = [...new Set (tabIng)];
-
+    //}
 });
 
 
 divListeUst.addEventListener("click", (e) => {
+    /*console.log(e);
+    ulSelect = document.getElementById("ustensiles");
+    console.log(ulSelect);
+    console.log(e.target);
+    ulSelect.removeChild(e.target.parentNode);
+    */
+    //e.target.textContent.display = "none";
+
     //tabUst = [];
-    creaTagDom(e,"ustensiles");
-    filtreTag();
-    
+    if(ulTag.children.includes(e.target.textContent)){
+
+    }else{
+        creaTagDom(e,"ustensiles");
+        filtreTag();
+    }
 });
 
 divListeApp.addEventListener("click", (e) => {
