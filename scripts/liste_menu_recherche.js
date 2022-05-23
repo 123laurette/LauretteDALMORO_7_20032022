@@ -68,7 +68,6 @@ function filtreBtn(tabTag, id){
         )
 
         document.getElementById(id).innerHTML = suggestion;
-        console.log(suggestion);
         
     }else{
         creaListeDom(tabTag, id);
@@ -113,8 +112,6 @@ function creaTagDom (e, id){
 //**************************************************************************************** */
 
 //fonction de suppression du tag avec la croix
-var liCloseTag;
-var iCloseTag;
 
 function closeTag(e){
 
@@ -140,12 +137,16 @@ function closeTag(e){
 
 //Filtre entre les tags et les recettes
 
-//création de tableau vide des tag
+//création de tableau vide des tags
 var tabUst = [];
 var tabApp = [];
 var tabIng = [];
 
 function filtreTag(){
+    //remise à zéro des tableau des tags
+    tabUst = [];
+    tabApp = [];
+    tabIng = [];
 
     //récupère le li qui est contenu dans ultag(element enfant)
     Array.from(ulTag.children).forEach(e => {
@@ -161,7 +162,6 @@ function filtreTag(){
             if(e.children[0].className == "span_ingredients"){
                 tabIng.push(e.children[0].textContent.toLowerCase());
             }
-
     })
 
         // every : teste si tous les element d'un tableau verifient une condition, renvoie true
@@ -171,16 +171,15 @@ function filtreTag(){
     if (ulTag.childElementCount > 0){ 
 
         //si ultag contient quelque chose
-        resultatTag = recettes.filter(recette => {  //je parcour les recettes
+        resultatTag = recettes.filter(recette => {  //je parcours les recettes
             return (                                //et je retourne, la comparaison entre les tableaux et les recettes
                 //test si tous les éléments contenus dans tab...sont inclus dans au moins une recette
                 tabApp.every(app => recette.appliance.toLowerCase().includes(app)) &&
-                //test sur tous les elements du tableau crée et parcour du tableau initial pour verifier au moins un element
+                //test sur tous les elements du tableau crée et parcours du tableau initial pour verifier au moins un element
                 tabUst.every(ust => recette.ustensils.some ((ustensile) => ustensile.toLowerCase().includes(ust))) &&
                 tabIng.every(ing => recette.ingredients.some ((ingredient) => ingredient.ingredient.toLowerCase().includes(ing)))
                 
-            )
-            
+            )    
         });
 
         recettes = resultatTag;
@@ -189,78 +188,42 @@ function filtreTag(){
     }
     displayRecette(resultatTag);
     displayListe(resultatTag);
-
 }
+
+
 //evenement au click sur un mot de la liste
 divListeIng.addEventListener("click", (e)  => {
+
+    if(tabIng.includes(e.target.textContent.toLowerCase())){
+    
+    }else{
         creaTagDom(e,"ingredients");    //j'appel la fonction de créa dans le dom
         filtreTag();// j'appel la fonction de trie des recettes en relation avec les tags
-        console.log(tabIng);
-    //}
+    }
 });
 
 
 divListeUst.addEventListener("click", (e) => {
-    /*console.log(e);
-    ulSelect = document.getElementById("ustensiles");
-    console.log(ulSelect);
-    console.log(e.target);
-    ulSelect.removeChild(e.target.parentNode);
-    */
-    //e.target.textContent.display = "none";
 
-    //tabUst = [];
-    //if(ulTag.children.includes(e.target.textContent)){
+    if(tabUst.includes(e.target.textContent.toLowerCase())){
 
-    //}else{
+    }else{
         creaTagDom(e,"ustensiles");
         filtreTag();
-    //}
+    }
 });
 
 divListeApp.addEventListener("click", (e) => {
-    //tabApp = [];
-    creaTagDom(e,"appareils");
-    filtreTag();
-    console.log(tabApp);
 
+    if(tabApp.includes(e.target.textContent.toLowerCase())){
+
+    }else{
+        creaTagDom(e,"appareils");
+        filtreTag();
+    }
 }); 
 
-//**************************************************************************************************** */
-//                      essais pour eviter repetition
 
-/*if(e.children[0].className == "span_ustensiles" ){
-    if(!tabUst.includes(e.children[0].textContent.toLowerCase())){
-        tabUst.push(e.children[0].textContent.toLowerCase());
-    }
-*******************************************************************************************************
-
-if(ele.children[0].className == "span_ustensiles" && !tabUst == ele.children[0].textContent.toLowerCase()){
-    tabUst.push(ele.children[0].textContent.toLowerCase());
-}
-***********************************************************************************************************
-
-if(e.children[0].className == "span_ustensiles"){
-    tabUst.push(e.children[0].textContent.toLowerCase());
-    console.log(tabUst);
-    tabUst = [...new Set (tabUst)];
-    console.log(tabUst);
-
-}
-*********************************************************************************************************
-
-if(e.children[0].className == "span_ustensiles"){
-    tabUst.push(e.children[0].textContent.toLowerCase());
-    return(
-        tabUst = [...new Set(tabUst)].sort()
-    );
-}
-*/
-
-
-
-
-//********************************************************************************************* */
 
 
 //....................OUVERTURE DES LISTES

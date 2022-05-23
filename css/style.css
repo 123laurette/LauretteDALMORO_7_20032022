@@ -40,14 +40,25 @@
         font-size: 25px;
     }
 
-    #tag {
-        display: flex;
+    
+    .li_ingredients {
+        background-color: #3282F7;
+    }
+    .li_appareils {
+        background-color: #68D9A4;
+    }
+    .li_ustensiles {
+        background-color: #ED6454;
+    }
+
+#tag {
+    display: flex;
     align-items: center;
     width: 90%;
     height: 50px;
     margin-left: 100px;
     margin-top: 20px;
-    }
+}
 
     #tag li {
         display: flex;
@@ -59,15 +70,6 @@
         margin-right: 10px;
         border-radius: 5px;
     }
-    .li_ingredients {
-        background-color: #3282F7;
-    }
-    .li_appareils {
-        background-color: #68D9A4;
-    }
-    .li_ustensiles {
-        background-color: #ED6454;
-    }
     #tag span {
         display: flex;
         align-items: center;
@@ -76,7 +78,6 @@
         font-size: 18px;
         height: 30px;
         list-style-type: none; 
-
     }
     #tag i {
         color: white;
@@ -157,16 +158,15 @@
                 padding-right: 20px;
                 padding-bottom: 20px;
                 padding-top: 20px;
-
             }
                 
-                    #ingredients li, #appareils li, #ustensiles li {
-                        color: white;
-                        width: 100%;
-                        margin-left: 20px;
-                        margin-bottom: 20px;
-                        font-size: 16px;
-                        list-style-type: none; 
-                        line-height: 20px;
-                        cursor: pointer;
-                    }
+                #ingredients li, #appareils li, #ustensiles li {
+                    color: white;
+                    width: 100%;
+                    margin-left: 20px;
+                    margin-bottom: 20px;
+                    font-size: 16px;
+                    list-style-type: none; 
+                    line-height: 20px;
+                    cursor: pointer;
+                }
