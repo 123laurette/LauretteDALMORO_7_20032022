@@ -223,7 +223,14 @@ divListeApp.addEventListener("click", (e) => {
     }
 }); 
 
+var cartesRecettes = document.querySelector(".cartes_recettes");
 
+function pasDeRecette(){
+    const divnull = document.createElement("div");
+    divnull.textContent = "pas de recette trouvee";
+    cartesRecettes.appendChild(divnull);
+}
+pasDeRecette();
 
 
 //....................OUVERTURE DES LISTES

@@ -16,7 +16,8 @@ function displayFiltreBtn (){
 
 
 
-const cartesRecettes = document.querySelector(".cartes_recettes");
+var cartesRecettes = document.querySelector(".cartes_recettes");
+
 
 function displayRecette (recettes) {
     cartesRecettes.innerHTML = "";
