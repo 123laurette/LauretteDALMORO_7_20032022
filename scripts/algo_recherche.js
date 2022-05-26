@@ -9,19 +9,24 @@ function filtreBarre(){
     let resultat = [];
 
     if (inputBarre.length >= 3){
-        resultat = recettes.filter(recette => recette.name.toLowerCase().includes(inputBarre.toLowerCase()) || recette.description.toLowerCase().includes(inputBarre.toLowerCase()) || 
-        recette.ingredients.forEach ((ingredient) => {ingredient.ingredient.toLowerCase().includes(inputBarre.toLowerCase())}));
-        recettes = resultat; 
-        /*if (resultat.innerHtml = ""){
-            pasDeRecette();
 
-        }*/
+        resultat = recettes.filter(recette => recette.name.toLowerCase().includes(inputBarre.toLowerCase()) || recette.description.toLowerCase().includes(inputBarre.toLowerCase()) ||
+        recette.ingredients.some ((ingredient) => ingredient.ingredient.toLowerCase().includes(inputBarre.toLowerCase())));
+
+        
+        recettes = resultat; 
+
+        
     }else{
         recettes = recipes;
         filtreTag();
         resultat = recettes;
     }
-    displayRecette(resultat);   //j'affiche le resultat de ce filtre au niveau des recettes
+    if (resultat.length == 0){
+        pasDeRecette();
+    }else{
+        displayRecette(resultat);   //j'affiche le resultat de ce filtre au niveau des recettes
+    }
     displayListe(resultat);     //j'affiche le resultat de ce filtre au niveau des listes btn
     
 }

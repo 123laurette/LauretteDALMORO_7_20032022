@@ -18,6 +18,14 @@ function displayFiltreBtn (){
 
 var cartesRecettes = document.querySelector(".cartes_recettes");
 
+function pasDeRecette(){
+    cartesRecettes.innerHTML = "";
+
+    const divnull = document.createElement("div");
+    divnull.textContent = "pas de recette trouvee";
+    console.log(divnull);
+    cartesRecettes.appendChild(divnull);
+}
 
 function displayRecette (recettes) {
     cartesRecettes.innerHTML = "";
