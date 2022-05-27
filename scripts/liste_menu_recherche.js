@@ -43,7 +43,7 @@ function creaListeDom(tabTag, id){
         const li = document.createElement("li");
         li.className = "li_" + id;
         li.innerHTML = e;
-        ul.appendChild(li)
+        ul.appendChild(li);
     });
 }
 
@@ -65,7 +65,7 @@ function filtreBtn(tabTag, id){
         resultFiltre.forEach(el =>
             suggestion += `
             <li class = li_choix_${id}, value = "${el}">${el}</li>`
-        )
+        );
 
         document.getElementById(id).innerHTML = suggestion;
         
@@ -161,7 +161,7 @@ function filtreTag(){
             if(e.children[0].className == "span_ingredients"){
                 tabIng.push(e.children[0].textContent.toLowerCase());
             }
-    })
+    });
 
         // every : teste si tous les element d'un tableau verifient une condition, renvoie true
         // some : teste si au moins un element du tableau passe le test, renvoie booleen
@@ -178,7 +178,7 @@ function filtreTag(){
                 tabUst.every(ust => recette.ustensils.some ((ustensile) => ustensile.toLowerCase().includes(ust))) &&
                 tabIng.every(ing => recette.ingredients.some ((ingredient) => ingredient.ingredient.toLowerCase().includes(ing)))
                 
-            )    
+            );    
         });
 
         recettes = resultatTag;

@@ -1725,4 +1725,4 @@ const recipes = [
     
 
 }
-]
+];
