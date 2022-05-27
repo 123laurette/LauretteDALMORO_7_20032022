@@ -98,7 +98,6 @@ function creaTagDom (e, id){
 
     const iTag = document.createElement("i");
     iTag.className = "far fa-times-circle";
-    //permets de cibler une croix en particulier
     iTag.id = "close_" + e.target.textContent;
     iTag.onclick = closeTag;
 
@@ -194,7 +193,7 @@ function filtreTag(){
 //evenement au click sur un mot de la liste
 divListeIng.addEventListener("click", (e)  => {
 
-    if(tabIng.includes(e.target.textContent.toLowerCase())){
+    if(tabIng.includes(e.target.textContent.toLowerCase())){    //permet de ne pas selectionner 2 fois le même mot de la liste
     
     }else{
         creaTagDom(e,"ingredients");    //j'appel la fonction de créa dans le dom

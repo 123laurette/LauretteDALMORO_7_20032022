@@ -18,12 +18,13 @@ function displayFiltreBtn (){
 
 var cartesRecettes = document.querySelector(".cartes_recettes");
 
+//Message en cas de recette non trouvée
 function pasDeRecette(){
     cartesRecettes.innerHTML = "";
 
     const divnull = document.createElement("div");
-    divnull.textContent = "pas de recette trouvee";
-    console.log(divnull);
+    divnull.id = "pas_de_recette";
+    divnull.textContent = 'Aucune recette ne correspond à vos critères, veuillez modifier votre recherche svp. Vous pouvez chercher "tarte aux pommes", "poisson", etc...';
     cartesRecettes.appendChild(divnull);
 }
 

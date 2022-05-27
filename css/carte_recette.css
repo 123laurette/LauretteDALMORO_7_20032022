@@ -7,6 +7,13 @@
     flex-wrap: wrap;
     align-items: flex-start;
 }
+    #pas_de_recette{
+        width: 37%;
+        text-align: center;
+        font-size: 18px;
+        line-height: 30px;
+        margin-left: 100px;
+    }
     .carte_recette {
         display: flex;
         flex-direction: column;
