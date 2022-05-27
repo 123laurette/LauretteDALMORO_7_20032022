@@ -34,7 +34,7 @@ function filtreBarre(){
     
 }
 
-barreChamp.addEventListener("input", filtreBarre)
+barreChamp.addEventListener("input", filtreBarre);
 
 
 
