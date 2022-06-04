@@ -12,7 +12,6 @@ function filtreBarre(){
     if (inputBarre.length >= 3){
         
         for (let i = 0; i < recettes.length; i++){
-            //let ingredientTrouve = false;
 
             if(recettes[i].name.toLowerCase().includes(inputBarre.toLowerCase()) || recettes[i].description.toLowerCase().includes(inputBarre.toLowerCase())){
                 resultat.push(recettes[i]);
@@ -20,14 +19,11 @@ function filtreBarre(){
             }else{
                 for (let j = 0; j < recettes[i].ingredients.length; j++){
                     if(recettes[i].ingredients[j].ingredient.toLowerCase().includes(inputBarre.toLowerCase())){
-                        //ingredientTrouve = true;
                         resultat.push(recettes[i]);
                         break;
                     }
                 }
             }  
-            
-            
         }
         
     }else{
