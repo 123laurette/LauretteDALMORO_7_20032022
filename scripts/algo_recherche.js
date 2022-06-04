@@ -1,5 +1,4 @@
-
-//  ALGO OPTION 2 BARRE PRINCIPALE
+//          ALGO OPTION 1 BARRE PRINCIPALE
 
 const barreChamp = document.getElementById("barre_champ");
 
@@ -7,29 +6,19 @@ const barreChamp = document.getElementById("barre_champ");
 function filtreBarre(){
     const inputBarre = barreChamp.value;
     let resultat = [];
-    recettes = recipes;
-    
-    if (inputBarre.length >= 3){
-        
-        for (let i = 0; i < recettes.length; i++){
 
-            if(recettes[i].name.toLowerCase().includes(inputBarre.toLowerCase()) || recettes[i].description.toLowerCase().includes(inputBarre.toLowerCase())){
-                resultat.push(recettes[i]);
+    if (inputBarre.length >= 3){    //filtre des recettes en relation avec les 3 caractères tapés  
 
-            }else{
-                for (let j = 0; j < recettes[i].ingredients.length; j++){
-                    if(recettes[i].ingredients[j].ingredient.toLowerCase().includes(inputBarre.toLowerCase())){
-                        resultat.push(recettes[i]);
-                        break;
-                    }
-                }
-            }  
-        }
+        resultat = recettes.filter(recette => recette.name.toLowerCase().includes(inputBarre.toLowerCase()) || recette.description.toLowerCase().includes(inputBarre.toLowerCase()) || recette.ingredients.some ((ingredient) => ingredient.ingredient.toLowerCase().includes(inputBarre.toLowerCase())));
+
+        recettes = resultat; 
         
-    }else{
+    }else{      //sinon affiche toutes les recettes avec un filtre correspondant aux tags selectionnes
+
         recettes = recipes;
         filtreTag();
         resultat = recettes;
+
     }
     if (resultat.length == 0){  //si il n'y a aucune correspondance, affiche un message
 
@@ -44,9 +33,4 @@ function filtreBarre(){
     
 }
 
-
 barreChamp.addEventListener("input", filtreBarre);
-
-
-
-
