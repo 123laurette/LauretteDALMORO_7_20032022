@@ -12,16 +12,22 @@ function filtreBarre(){
     if (inputBarre.length >= 3){
         
         for (let i = 0; i < recettes.length; i++){
-            let ingredientTrouve = false;
+            //let ingredientTrouve = false;
 
-            for (let j = 0; j < recettes[i].ingredients.length; j++){
-                if(recettes[i].ingredients[j].ingredient.toLowerCase().includes(inputBarre.toLowerCase())){
-                    ingredientTrouve = true;
-                }
-            }
-            if(ingredientTrouve || recettes[i].name.toLowerCase().includes(inputBarre.toLowerCase()) || recettes[i].description.toLowerCase().includes(inputBarre.toLowerCase())){
+            if(recettes[i].name.toLowerCase().includes(inputBarre.toLowerCase()) || recettes[i].description.toLowerCase().includes(inputBarre.toLowerCase())){
                 resultat.push(recettes[i]);
+
+            }else{
+                for (let j = 0; j < recettes[i].ingredients.length; j++){
+                    if(recettes[i].ingredients[j].ingredient.toLowerCase().includes(inputBarre.toLowerCase())){
+                        //ingredientTrouve = true;
+                        resultat.push(recettes[i]);
+                        break;
+                    }
+                }
             }  
+            
+            
         }
         
     }else{
